@@ -1,0 +1,93 @@
+\documentclass[10pt]{article}
+\usepackage{fontspec}
+\usepackage[utf8]{inputenc}
+\setmainfont{STIXGeneral}
+%\usepackage[papersize={11in, 17in}]{geometry}
+\usepackage[paperwidth=11in,paperheight=17in,margin=1in,headheight=0.0in,footskip=0.5in,includehead,includefoot,portrait]{geometry}
+\usepackage[absolute]{textpos}
+\TPGrid[0.5in, 0.25in]{23}{24}
+\parindent=0pt
+\parskip=12pt
+\usepackage{nopageno}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{amsmath}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+
+\begin{document}
+
+\begin{textblock}{23}(0, 1)
+\begin{center}
+\huge FOREWORD
+\end{center}
+\end{textblock}
+
+\vspace*{0.25\baselineskip}
+
+\begingroup
+\begin{center}
+\leftskip1.5in
+\hspace{10mm} The \textit{Tourbillon} is a mechanism in mobile timepieces which oscillates a rotation back and forth around the watch spring, providing an even distribution of gravitational force across the mechanism. This very precise and costly mechanism allows for the maintenance of time precision in both wrist and pocket watches regardless of their orientation relative to the Earth's gravitational pull.
+\rightskip\leftskip
+\phantom{text} \hfill (G.R.E.)
+\end{center}
+\endgroup 
+
+%\vspace*{0.5\baselineskip}
+
+\begin{center}
+\huge PERFORMANCE NOTES
+\end{center}
+
+
+\begin{center}
+\pmb{Microtones}:
+\end{center}
+
+\begin{center}
+\includegraphics[width=0.25\textwidth]{microtones.png}
+\end{center}
+
+\begingroup
+\begin{center}
+\leftskip1in
+\pmb{Techniques} : \circled{1} Tremoli should be performed as fast as possible, rather than a measured subdivision of the duration to which they are attached. \circled{2} Accidentals apply only to the pitch which they immediately precede, but persist through ties. \circled{3} The performers are asked to lightly tap the faces of their instruments. These passages are clearly notated with text indications and a ``whiteout'' staff devoid of the inner lines. While the overall tempo remains stable in these passages, the tapping-tremolo itself is shown to accelerate and decelerate with textual indications.
+\rightskip\leftskip
+\phantom{text} \hfill \phantom{()}
+
+\endgroup
+
+%\vspace*{0.1\baselineskip}
+
+\begin{center}
+\huge INSTRUMENTATION
+\end{center}
+
+\begin{center}
+Listed below is the minimum personnel required, although larger forces are preferable.
+\end{center}
+
+\begin{center}
+4 Violins
+\end{center}
+\begin{center}
+2 Violas
+\end{center}
+\begin{center}
+2 Violoncelli
+\end{center}
+\begin{center}
+1 Contrabass
+\end{center}
+
+\vspace*{5\baselineskip}
+
+\begin{center}
+c.5'10''
+\end{center}
+
+
+
+\end{document}
