@@ -16,12 +16,52 @@ silence_handler = evans.RhythmHandler(
 ##
 ##
 
-demo_rhythm_maker = rmakers.stack(
+note_rhythm_maker = rmakers.stack(
     rmakers.NoteRhythmMaker(),
 )
 
-demo_rhythm_handler = evans.RhythmHandler(
-    rmaker=demo_rhythm_maker,
+note_rhythm_handler = evans.RhythmHandler(
+    rmaker=note_rhythm_maker,
     forget=True,
-    name="demo_rhythm_handler",
+    name="note_rhythm_handler",
+)
+
+##
+##
+
+slap_rhythm_maker = rmakers.stack(
+    evans.RTMMaker(
+        [
+            "(1 ((1 (-1 1)) -1 1 -1 (1 (-1 1))))",
+        ]
+    ),
+    rmakers.trivialize(abjad.select().tuplets()),
+    rmakers.extract_trivial(abjad.select().tuplets()),
+    rmakers.rewrite_rest_filled(abjad.select().tuplets()),
+    rmakers.rewrite_sustained(abjad.select().tuplets()),
+)
+
+slap_rhythm_handler = evans.RhythmHandler(
+    rmaker=slap_rhythm_maker,
+    forget=False,
+    name="slap_rhythm_handler",
+)
+
+##
+##
+
+mult_rhythm_maker = rmakers.stack(
+    rmakers.talea(
+        [3, 2, 6, 5, 2, 3, 4], 8, extra_counts=[0, -1, 2, 0, -3, 0, 0, 4, 3, 0, 2, 1]
+    ),
+    rmakers.trivialize(abjad.select().tuplets()),
+    rmakers.extract_trivial(abjad.select().tuplets()),
+    rmakers.rewrite_rest_filled(abjad.select().tuplets()),
+    rmakers.rewrite_sustained(abjad.select().tuplets()),
+)
+
+mult_rhythm_handler = evans.RhythmHandler(
+    rmaker=mult_rhythm_maker,
+    forget=False,
+    name="mult_rhythm_handler",
 )

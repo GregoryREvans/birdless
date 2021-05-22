@@ -56,6 +56,42 @@ diagram-three-markup = \markup {
 	}
 }
 
+diagram-eleven-markup = ^ \markup {
+	\center-column
+	{
+		\override #'(size . 0.5)
+			\woodwind-diagram
+		#'alto-saxophone
+		#'(
+			(cc . (one two three five six))
+				(lh . ())
+				(rh . (low-c)))
+	}
+}
+
+diagram-eleven-span-markup = \markup {
+    \override #'(size . 0.5)
+		\woodwind-diagram
+		#'alto-saxophone
+		#'(
+			(cc . (one two three five six))
+				(lh . ())
+				(rh . (low-c)))
+    }
+
+diagram-thirteen-markup = ^ \markup {
+    \center-column
+    {
+    	\override #'(size . 0.5)
+    		\woodwind-diagram
+    	#'alto-saxophone
+    	#'(
+    		(cc . (one two three))
+    			(lh . (gis))
+    			(rh . ()))
+    }
+}
+
 % direction = down
 colophon = \markup
 {
@@ -80,16 +116,6 @@ colophon = \markup
     }
 }
 
-% direction = up
+teeth-on-reed-markup = \markup \override #'(style . "box") \override #'(box-padding . 0.5) \italic \box \whiteout \small "teeth on reed"
 
-rehearsal-markA = \markup
-{
-    \box
-    {
-        \override #'(font-name . "STIXGeneral Bold")
-        \caps
-        {
-            A
-        }
-    }
-}
+normale-markup = \markup \override #'(style . "box") \override #'(box-padding . 0.5) \italic \box \whiteout \small "normale"

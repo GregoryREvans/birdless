@@ -1,7 +1,7 @@
 \version "2.19.84"
 \language "english"
 #(set-default-paper-size "a4portrait")
-#(set-global-staff-size 12)
+#(set-global-staff-size 14)
 
 \include "../../lib.ily"
 
@@ -9,7 +9,7 @@
 	tagline = ##f
 	breakbefore = ##t
 	dedication = \markup \override #'(font-name . "STIXGeneral") \fontsize #3.4 \center-column {"t o   S t e p h   T a m a s" \with-color #white "."}
-	title =  \markup \override #'(font-name . "STIXGeneral") \fontsize #16 \bold\center-column {"Birdless, Colorless, Cloudless" }
+	title =  \markup \override #'(font-name . "STIXGeneral") \fontsize #11 \bold\center-column {"Birdless, Cloudless, Colourless" }
 	subtitle = \markup \center-column { \with-color #white "." \override #'(font-name . "STIXGeneral") \fontsize #5.27 "o r ,   b a t s   i n   O h i o" }
 	subsubtitle = \markup \center-column { \with-color #white "." \override #'(font-name . "STIXGeneral") \fontsize #2.27 "for alto saxophone" }
 	composer = \markup \override #'(font-name . "STIXGeneral") \fontsize #2.3 {"Gregory Rowland Evans (*1995)"}
@@ -26,7 +26,7 @@
         \numericTimeSignature
         \consists Axis_group_engraver
 		\consists Bar_number_engraver
-        \consists Time_signature_engraver
+        %{ \consists Time_signature_engraver %}
 		\consists Mark_engraver
 		\consists Metronome_mark_engraver
 		\consists Text_engraver
@@ -83,9 +83,9 @@
 		\override StaffGrouper.staff-staff-spacing = #'((basic-distance . 11) (minimum-distance . 11) (padding . 2))
 		\override StaffGrouper.staffgroup-staff-spacing = #'((basic-distance . 11) (minimum-distance . 11) (padding . 2))
 		\override Stem.stemlet-length = #1.15
-		%{ \override StemTremolo.slope = #0.3
+		\override StemTremolo.slope = #0.3
 		\override StemTremolo.shape = #'beam-like
-		\override StemTremolo.beam-thickness = #0.3 %}
+		\override StemTremolo.beam-thickness = #0.3
 		\override TupletBracket.bracket-visibility = ##t
 		\override TupletBracket.minimum-length = #3
 		\override TupletBracket.padding = #1.55
@@ -105,7 +105,8 @@
 	}
 	\context {
 		\Staff
-		\remove Time_signature_engraver
+		\numericTimeSignature
+		%{ \remove Time_signature_engraver %}
 		fontSize = #-1
 	}
 	\context {
@@ -132,7 +133,7 @@
 }
 
 \paper {
-	system-separator-markup = \markup { \slashSeparator }
+	%{ system-separator-markup = \markup { \slashSeparator } %}
 	system-system-spacing = #'((basic-distance . 16) (minimum-distance . 16) (padding . 2))
 
 	indent = 20\mm
@@ -147,7 +148,7 @@
 	oddFooterMarkup = \markup
         \fill-line {
             \override #'(font-name . "STIXGeneral")
-                \bold \fontsize #3 "Tourbillon - GR Evans"
+                \bold \fontsize #3 "Birdless - GR Evans"
             \concat {
                 \override #'(font-name . "STIXGeneral")
                     \bold \fontsize #3
@@ -162,6 +163,6 @@
                         \fromproperty #'page:page-number-string
                 }
             \override #'(font-name . "STIXGeneral")
-                \bold \fontsize #3 "Tourbillon - GR Evans"
+                \bold \fontsize #3 "Birdless - GR Evans"
             }
 }

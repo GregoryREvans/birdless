@@ -4,8 +4,15 @@ import abjad
 import baca
 import evans
 
-from birdless.lib import mark_108, with_sharps
+from birdless.lib import (
+    mark_108,
+    on_beat_grace_handler,
+    tone_to_air,
+    with_sharps,
+    zero_padding_glissando,
+)
 from birdless.materials.instruments import instruments
+from birdless.materials.pitch import squeal_pitch_handler_1
 from birdless.materials.score_structure import score
 from birdless.materials.time_signatures import signatures_01
 from birdless.materials.timespans import handler_commands_01, rhythm_commands_01
@@ -21,11 +28,6 @@ maker = evans.SegmentMaker(
     name_staves=True,
     commands=[
         rhythm_commands_01,
-        evans.call(
-            "score",
-            evans.SegmentMaker.transform_brackets,
-            abjad.select().components(abjad.Score),
-        ),
         evans.call(
             "score",
             evans.SegmentMaker.rewrite_meter,
@@ -48,15 +50,124 @@ maker = evans.SegmentMaker(
         #     met_108,
         #     baca.leaf(0),
         # ),
+        evans.call(
+            "Voice 1",
+            on_beat_grace_handler,
+            abjad.select().logical_ties().get([0, 1, 9]),
+        ),
+        # evans.call(
+        #     "Staff 1",
+        #     evans.annotate_leaves,
+        #     abjad.select(),
+        # ),
+        evans.call(
+            "Staff 1",
+            squeal_pitch_handler_1,
+            abjad.select().logical_ties(grace=True),
+        ),
+        evans.call(
+            "Staff 1",
+            zero_padding_glissando,
+            abjad.select().logical_ties(grace=True),
+        ),
+        evans.attach(
+            "Staff 1",
+            abjad.LilyPondLiteral(r"\breathe", format_slot="after"),
+            baca.leaf(8, grace=True),
+        ),
+        evans.attach(
+            "Staff 1",
+            abjad.LilyPondLiteral(r"\breathe", format_slot="after"),
+            baca.leaf(16, grace=True),
+        ),
+        evans.attach(
+            "Staff 1",
+            abjad.Articulation("snappizzicato"),
+            baca.leaf(20),
+        ),
+        evans.attach(
+            "Staff 1",
+            abjad.Articulation("snappizzicato"),
+            baca.leaf(22),
+        ),
+        evans.attach(
+            "Staff 1",
+            abjad.Articulation("snappizzicato"),
+            baca.leaf(25),
+        ),
+        evans.call(
+            "Staff 1",
+            tone_to_air,
+            baca.leaves(grace=True).get([9, 10, 11, 12, 13, 14, 15]),
+        ),
+        evans.attach(
+            "Staff 1",
+            abjad.LilyPondLiteral(
+                r"\tweak NoteHead.style #'cross", format_slot="before"
+            ),
+            baca.leaf(17),
+        ),
+        evans.attach(
+            "Staff 1",
+            abjad.Dynamic("mp"),
+            baca.leaf(0, grace=False),
+        ),
+        evans.attach(
+            "Staff 1",
+            abjad.StartHairpin("<"),
+            baca.leaf(0, grace=False),
+        ),
+        evans.attach(
+            "Staff 1",
+            abjad.Dynamic("fp"),
+            baca.leaf(1, pitched=True, grace=False),
+        ),
+        evans.attach(
+            "Staff 1",
+            abjad.StartHairpin("--"),
+            baca.leaf(1, pitched=True, grace=False),
+        ),
+        evans.attach(
+            "Staff 1",
+            abjad.StopHairpin(),
+            baca.leaf(2, grace=False),
+        ),
+        evans.attach(
+            "Staff 1",
+            abjad.Dynamic("pp"),
+            baca.leaf(2, pitched=True, grace=False),
+        ),
+        evans.attach(
+            "Staff 1",
+            abjad.Dynamic("mp"),
+            baca.leaf(5, pitched=True, grace=False),
+        ),
+        evans.attach(
+            "Staff 1",
+            abjad.Markup(r"\teeth-on-reed-markup", literal=True, direction=abjad.Up),
+            baca.leaf(0, grace=False),
+        ),
+        evans.attach(
+            "Staff 1",
+            abjad.Markup(r"\normale-markup", literal=True, direction=abjad.Up),
+            baca.leaf(3, grace=False),
+        ),
+        evans.attach(
+            "Staff 1",
+            abjad.Markup(r"\teeth-on-reed-markup", literal=True, direction=abjad.Up),
+            baca.leaf(9, grace=False),
+        ),
+        evans.attach(
+            "Staff 1",
+            abjad.Markup(
+                r"\markup { \raise #4 c.2'}", direction=abjad.Up, literal=True
+            ),
+            baca.leaf(-1, grace=False),
+        ),
         evans.attach(
             "Global Context",
             mark_108,
             baca.leaf(0),
-        ),
-        evans.attach(
-            "Global Context",
-            abjad.Markup(r"\rehearsal-mark-a", literal=True),
-            baca.leaf(1),
         ),
     ],
     score_template=score,
@@ -76,7 +187,7 @@ maker = evans.SegmentMaker(
     barline="||",
     tempo=((1, 4), 108),
     rehearsal_mark="",
-    fermata="scripts.ufermata",
+    fermata="scripts.ushortfermata",
     page_break_counts=[90],
 )
 

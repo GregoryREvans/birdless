@@ -9,19 +9,11 @@ handler_to_value = abjad.OrderedDict(
                         'state',
                         abjad.OrderedDict(
                             [
-                                ('divisions_consumed', 1),
-                                ('logical_ties_produced', 1),
+                                ('divisions_consumed', 3),
+                                ('logical_ties_produced', 3),
                                 ]
                             ),
                         ),
-                    ]
-                ),
-            ),
-        (
-            'slap_rhythm_handler',
-            abjad.OrderedDict(
-                [
-                    ('state', 0),
                     ]
                 ),
             ),
