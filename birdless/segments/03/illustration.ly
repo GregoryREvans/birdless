@@ -154,8 +154,9 @@
                                 {
 
                                     \voiceTwo                                  %! abjad.on_beat_grace_container(4)
-                                    cs'1
+                                    g'1
                                     \mf
+                                    ^ \teeth-on-reed-markup
 
                                 }
 
@@ -230,7 +231,7 @@
                                 {
 
                                     \voiceTwo                                  %! abjad.on_beat_grace_container(4)
-                                    e'2.
+                                    af'2.
 
                                 }
 
@@ -321,7 +322,8 @@
                                 {
 
                                     \voiceTwo                                  %! abjad.on_beat_grace_container(4)
-                                    c'1
+                                    cs'1
+                                    \fff
 
                                 }
 
@@ -382,7 +384,8 @@
                                 {
 
                                     \voiceTwo                                  %! abjad.on_beat_grace_container(4)
-                                    g'2
+                                    e'2
+                                    \mf
 
                                 }
 
@@ -478,7 +481,7 @@
                                 {
 
                                     \voiceTwo                                  %! abjad.on_beat_grace_container(4)
-                                    af'1
+                                    c'1
 
                                 }
 
@@ -494,6 +497,7 @@
                                     \slash
                                     \voiceOne
                                     cs'''16
+                                    :32
                                     [
                                     (
                                     - \abjad-zero-padding-glissando            %! abjad.glissando(7)
@@ -503,10 +507,12 @@
                                     \tweak X-extent #'(0 . 0)
                                     \tweak transparent ##t
                                     d'''16
+                                    :32
                                     - \abjad-zero-padding-glissando            %! abjad.glissando(7)
                                     \glissando                                 %! abjad.glissando(7)
 
                                     ef'''8
+                                    :32
                                     )
                                     ]
 
@@ -516,7 +522,8 @@
                                 {
 
                                     \voiceTwo                                  %! abjad.on_beat_grace_container(4)
-                                    cs'4
+                                    g'4
+                                    \fff
 
                                 }
 
@@ -526,16 +533,19 @@
 
                             <gtqs' bqf'' f'''>4.
                             \ff
+                            ^ \normale-markup
                             \>
+                            \glissando                                         %! abjad.glissando(7)
                             - \abjad-solid-line-with-hook
                             - \tweak bound-details.left.text \markup \concat { \diagram-eleven-span-markup \hspace #0.5 }
-                            - \tweak padding 10
-                            - \tweak staff-padding 10
+                            - \tweak padding 12
+                            - \tweak staff-padding 12
                             \startTextSpan
 
                             <aqf'' bqf''>4
                             \p
                             \>
+                            \glissando                                         %! abjad.glissando(7)
 
                             <gtqs' af''>8
                             \pp
@@ -550,6 +560,7 @@
                                 % [Voice 1 measure 8]                          %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
 
                                 <gtqs' af''>4
+                                \glissando                                     %! abjad.glissando(7)
 
                                 <aqf'' bqf''>2
                                 \p

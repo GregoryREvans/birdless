@@ -72,12 +72,12 @@ maker = evans.SegmentMaker(
         ),
         evans.attach(
             "Staff 1",
-            abjad.LilyPondLiteral(r"\breathe", format_slot="after"),
+            abjad.BreathMark(),
             baca.leaf(8, grace=True),
         ),
         evans.attach(
             "Staff 1",
-            abjad.LilyPondLiteral(r"\breathe", format_slot="after"),
+            abjad.BreathMark(),
             baca.leaf(16, grace=True),
         ),
         evans.attach(

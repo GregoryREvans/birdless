@@ -16,12 +16,12 @@ from birdless.materials.score_structure import score
 from birdless.materials.time_signatures import signatures_03
 from birdless.materials.timespans import handler_commands_03, rhythm_commands_03
 
-start_scratch_span = abjad.StartTextSpan(
+start_span = abjad.StartTextSpan(
     left_text=abjad.Markup(r"\diagram-eleven-span-markup", literal=True),
     style="solid-line-with-hook",
 )
-abjad.tweak(start_scratch_span).padding = 10
-abjad.tweak(start_scratch_span).staff_padding = 10
+abjad.tweak(start_span).padding = 12
+abjad.tweak(start_span).staff_padding = 12
 
 maker = evans.SegmentMaker(
     instruments=instruments,
@@ -71,8 +71,33 @@ maker = evans.SegmentMaker(
         ),
         evans.call(
             "Staff 1",
+            abjad.glissando,
+            abjad.select().leaves(grace=False).get([6, 7, 8, 9, 10, 11, 12]),
+        ),
+        evans.call(
+            "Staff 1",
             flutter_tongue,
             baca.leaves(grace=True).get([17, 18, 19, 20, 21, 22, 23, 24, 25]),
+        ),
+        evans.attach(
+            "Staff 1",
+            abjad.Dynamic("fff"),
+            baca.leaf(2, grace=False),
+        ),
+        evans.attach(
+            "Staff 1",
+            abjad.Dynamic("mf"),
+            baca.leaf(3, grace=False),
+        ),
+        evans.attach(
+            "Staff 1",
+            abjad.Dynamic("fff"),
+            baca.leaf(5, grace=False),
+        ),
+        evans.call(
+            "Staff 1",
+            flutter_tongue,
+            baca.leaves(grace=True).get([43, 44, 45]),
         ),
         evans.attach(
             "Staff 1",
@@ -81,7 +106,7 @@ maker = evans.SegmentMaker(
         ),
         evans.attach(
             "Staff 1",
-            start_scratch_span,
+            start_span,
             baca.leaf(6, grace=False),
         ),
         evans.attach(
@@ -123,6 +148,16 @@ maker = evans.SegmentMaker(
             "Staff 1",
             abjad.Dynamic("p"),
             baca.leaf(11, grace=False),
+        ),
+        evans.attach(
+            "Staff 1",
+            abjad.Markup(r"\teeth-on-reed-markup", literal=True, direction=abjad.Up),
+            baca.leaf(0, grace=False),
+        ),
+        evans.attach(
+            "Staff 1",
+            abjad.Markup(r"\normale-markup", literal=True, direction=abjad.Up),
+            baca.leaf(6, grace=False),
         ),
         evans.attach(
             "Staff 1",

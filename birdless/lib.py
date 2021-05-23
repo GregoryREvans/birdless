@@ -1,6 +1,54 @@
 import abjad
 import evans
 
+
+class WarbleFingerings(evans.handlers.Handler):
+    def __init__(
+        self,
+        fingerings_list=None,
+        forget=False,
+        count=-1,
+        name="Warble Fingerings",
+    ):
+        self.fingerings_list = fingerings_list
+        self.forget = forget
+        self._count = count
+        self._cyc_fingerings = evans.CyclicList(
+            lst=fingerings_list, forget=self.forget, count=self._count
+        )
+        self.name = name
+
+    def __call__(self, selections):
+        for tie in abjad.select(selections).logical_ties(pitched=True):
+            first_leaf = abjad.select(tie).leaf(0)
+            symbol = self._cyc_fingerings(r=1)[0]
+            abjad.attach(symbol, first_leaf)
+
+    def name(self):
+        return self.name
+
+    def state(self):
+        return abjad.OrderedDict(
+            [
+                ("state", "No State Preservation Enabled!"),
+            ]
+        )
+
+
+met_120 = abjad.MetronomeMark((1, 4), 120)
+met_120_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 120)
+mark_120 = abjad.LilyPondLiteral(
+    [
+        r"^ \markup {",
+        r"  \huge",
+        r"  \concat {",
+        f"      {str(met_120_mark)[8:]}",
+        r"  }",
+        r"}",
+    ],
+    format_slot="after",
+)
+
 met_108 = abjad.MetronomeMark((1, 4), 108)
 met_108_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 108)
 mark_108 = abjad.LilyPondLiteral(
@@ -9,6 +57,20 @@ mark_108 = abjad.LilyPondLiteral(
         r"  \huge",
         r"  \concat {",
         f"      {str(met_108_mark)[8:]}",
+        r"  }",
+        r"}",
+    ],
+    format_slot="after",
+)
+
+met_84 = abjad.MetronomeMark((1, 4), 84)
+met_84_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 84)
+mark_84 = abjad.LilyPondLiteral(
+    [
+        r"^ \markup {",
+        r"  \huge",
+        r"  \concat {",
+        f"      {str(met_84_mark)[8:]}",
         r"  }",
         r"}",
     ],
@@ -97,6 +159,29 @@ on_beat_grace_handler = evans.OnBeatGraceHandler(
     name="On Beat Grace Handler",
 )
 
+on_beat_grace_handler_2 = evans.OnBeatGraceHandler(
+    number_of_attacks=[
+        10,
+        9,
+        8,
+    ],
+    durations=[
+        1,
+        2,
+        1,
+        2,
+        1,
+        1,
+    ],
+    font_size=-4,
+    leaf_duration=(1, 100),
+    attack_number_forget=False,
+    durations_forget=False,
+    boolean_vector=[1],
+    vector_forget=False,
+    name="On Beat Grace Handler 2",
+)
+
 tone_to_air = evans.TextSpanHandler(
     span_one_positions=["tone", "air"],
     span_one_style="dashed-line",
@@ -109,3 +194,9 @@ flutter_tongue = evans.ArticulationHandler(
     ["tremolo"],
     forget=False,
 )
+
+
+def hide_tuplet(selections):
+    for tuplet in abjad.select(selections).components(abjad.Tuplet):
+        if tuplet.multiplier == abjad.Multiplier(1, 1):
+            tuplet.hide = True

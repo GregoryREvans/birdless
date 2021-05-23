@@ -60,16 +60,19 @@
                             \set Staff.instrumentName =                        %! applying staff names and clefs
                             \markup { \hcenter-in #14 "Alto Saxophone" }       %! applying staff names and clefs
                             <cqs'' g'' e''' bf'''>2..
-                            \ff
-                            - \diagram-thirteen-markup
+                            \sf
+                            ^ \normale-markup
+                            ^ \diagram-thirteen-markup
                             % [Voice 1 measure 2]                              %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
 
                             <cqs'' g'' e''' bf'''>2.
-                            - \diagram-thirteen-markup
+                            \sf
+                            ^ \diagram-thirteen-markup
                             % [Voice 1 measure 3]                              %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
 
                             <gtqs' bqf'' f'''>4.
-                            - \diagram-eleven-markup
+                            \sf
+                            ^ \diagram-eleven-markup
                             ~
 
                             <gtqs' bqf'' f'''>4

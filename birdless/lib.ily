@@ -11,12 +11,10 @@ all-keys-markup = \markup
     }
 }
 
-% <d' ctqs'' as'' ds''' fs'''>
-% ff
-
 diagram-one-markup = \markup {
     \center-column
     {
+        \override #'(size . 0.5)
         \woodwind-diagram
         #'alto-saxophone
         #'(
@@ -26,12 +24,23 @@ diagram-one-markup = \markup {
     }
 }
 
-% <dqs' dqs'' fqs'' b'' dtqs'''>
-% ff
-
 diagram-two-markup = \markup {
     \center-column
     {
+        \override #'(size . 0.5)
+        \woodwind-diagram
+        #'alto-saxophone
+        #'(
+            (cc . (one two three four five six))
+            (lh . (low-bes))
+            (rh . (ees low-c)))
+    }
+}
+
+diagram-three-markup = \markup {
+    \center-column
+    {
+        \override #'(size . 0.5)
         \woodwind-diagram
         #'alto-saxophone
         #'(
@@ -41,19 +50,56 @@ diagram-two-markup = \markup {
     }
 }
 
-% <fqs' e'' bqs''>
-% p
+diagram-four-markup = \markup {
+    \center-column
+    {
+        \override #'(size . 0.5)
+        \woodwind-diagram
+        #'alto-saxophone
+        #'(
+            (cc . (one two three four five))
+            (lh . (low-bes))
+            (rh . ()))
+    }
+}
 
-diagram-three-markup = \markup {
-	\center-column
-	{
-			\woodwind-diagram
-		#'alto-saxophone
-		#'(
-			(cc . (one two three four five))
-				(lh . (low-bes))
-				(rh . ()))
-	}
+diagram-five-markup = \markup {
+    \center-column
+    {
+        \override #'(size . 0.5)
+        \woodwind-diagram
+        #'alto-saxophone
+        #'(
+            (cc . (one two three four five))
+            (lh . (low-bes))
+            (rh . (low-c)))
+    }
+}
+
+diagram-nine-span-markup = \markup {
+    \center-column
+    {
+        \override #'(size . 0.5)
+        \woodwind-diagram
+        #'alto-saxophone
+        #'(
+            (cc . (one two four five six))
+            (lh . (low-bes))
+            (rh . (low-c)))
+    }
+}
+
+diagram-ten-markup = \markup {
+    \center-column
+    {
+        \override #'(size . 0.5)
+        \woodwind-diagram
+        #'alto-saxophone
+        #'(
+            (cc . (one two four five six))
+            (lh . (low-bes))
+            (rh . ()))
+    }
 }
 
 diagram-eleven-markup = ^ \markup {
@@ -79,7 +125,20 @@ diagram-eleven-span-markup = \markup {
 				(rh . (low-c)))
     }
 
-diagram-thirteen-markup = ^ \markup {
+diagram-twelve-markup = \markup {
+    \center-column
+    {
+        \override #'(size . 0.5)
+        \woodwind-diagram
+        #'alto-saxophone
+        #'(
+            (cc . (two three five six))
+            (lh . (cis))
+            (rh . (low-c)))
+    }
+}
+
+diagram-thirteen-markup = \markup {
     \center-column
     {
     	\override #'(size . 0.5)

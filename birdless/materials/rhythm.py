@@ -65,3 +65,37 @@ mult_rhythm_handler = evans.RhythmHandler(
     forget=False,
     name="mult_rhythm_handler",
 )
+
+##
+##
+
+warble_rtm_string = "(1 ((2 (1 1)) (1 (1 1)) (2 (1 2 1 1 1)) (3 (1 1 1))))"
+
+
+def make_rotations(rtm_string, rotations):
+    out = []
+    for rotation in range(rotations):
+        new_rtm = evans.rotate_tree(rtm_string, rotation)
+        funnels = evans.funnel_inner_tree_to_x(rtm_string=new_rtm, x=1)
+        for funnel in funnels:
+            out.append(funnel)
+    return out
+
+
+warble_rotations_and_funnels = make_rotations(warble_rtm_string, 12)
+
+final_warble = evans.Sequence(warble_rotations_and_funnels).reverse()
+
+warble_rhythm_maker = rmakers.stack(
+    evans.RTMMaker(final_warble),
+    rmakers.trivialize(abjad.select().tuplets()),
+    rmakers.extract_trivial(abjad.select().tuplets()),
+    rmakers.rewrite_rest_filled(abjad.select().tuplets()),
+    rmakers.rewrite_sustained(abjad.select().tuplets()),
+)
+
+warble_rhythm_handler = evans.RhythmHandler(
+    rmaker=warble_rhythm_maker,
+    forget=False,
+    name="warble_rhythm_handler",
+)
