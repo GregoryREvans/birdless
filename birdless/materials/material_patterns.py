@@ -2,6 +2,7 @@ import abjad
 
 from birdless.lib import WarbleFingerings
 from birdless.materials.pitch import (
+    flourish_pitch_handler,
     mult_pitch_handler,
     slap_pitch_handler,
     split_fundamental_handler,
@@ -9,6 +10,7 @@ from birdless.materials.pitch import (
     warble_pitch_handler,
 )
 from birdless.materials.rhythm import (
+    flourish_rhythm_handler,
     mult_rhythm_handler,
     note_rhythm_handler,
     silence_handler,
@@ -311,4 +313,63 @@ articulation_materials_06 = [
     warble_fingerings_06,
     silence_handler,
     silence_handler,
+]
+
+## 07
+
+mult_rhythm_handler_07 = mult_rhythm_handler.make_persistent_copy(
+    abjad.OrderedDict(
+        [
+            ("divisions_consumed", 13),
+            ("incomplete_last_note", True),
+            ("logical_ties_produced", 24),
+            ("talea_weight_consumed", 85),
+        ]
+    )
+)
+
+rhythm_materials_07 = [
+    flourish_rhythm_handler,
+    mult_rhythm_handler_07,
+    mult_rhythm_handler_07,
+    mult_rhythm_handler_07,
+    mult_rhythm_handler_07,
+    mult_rhythm_handler_07,
+    note_rhythm_handler,
+    mult_rhythm_handler_07,
+    mult_rhythm_handler_07,
+    mult_rhythm_handler_07,
+]
+
+mult_pitch_handler_07 = mult_pitch_handler.make_persistent_copy(
+    abjad.OrderedDict(
+        [
+            ("pitch_count", 25),
+            ("chord_boolean_count", -1),
+            ("chord_groups_count", -1),
+        ]
+    )
+)
+
+teeth_pitch_handler_07 = teeth_pitch_handler.make_persistent_copy(
+    abjad.OrderedDict(
+        [
+            ("pitch_count", 6),
+            ("chord_boolean_count", -1),
+            ("chord_groups_count", -1),
+        ]
+    )
+)
+
+pitch_materials_07 = [
+    flourish_pitch_handler,
+    mult_pitch_handler_07,
+    mult_pitch_handler_07,
+    mult_pitch_handler_07,
+    mult_pitch_handler_07,
+    mult_pitch_handler_07,
+    teeth_pitch_handler_07,
+    mult_pitch_handler_07,
+    mult_pitch_handler_07,
+    mult_pitch_handler_07,
 ]

@@ -99,3 +99,21 @@ warble_rhythm_handler = evans.RhythmHandler(
     forget=False,
     name="warble_rhythm_handler",
 )
+
+flourish_rhythm_maker = rmakers.stack(
+    evans.RTMMaker(
+        [
+            "(1 ((1 (1 2 1 1 1 1 1 1 1)) 2))",
+        ]
+    ),
+    rmakers.trivialize(abjad.select().tuplets()),
+    rmakers.extract_trivial(abjad.select().tuplets()),
+    rmakers.rewrite_rest_filled(abjad.select().tuplets()),
+    rmakers.rewrite_sustained(abjad.select().tuplets()),
+)
+
+flourish_rhythm_handler = evans.RhythmHandler(
+    rmaker=flourish_rhythm_maker,
+    forget=False,
+    name="flourish_rhythm_handler",
+)

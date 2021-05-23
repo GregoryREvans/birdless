@@ -77,6 +77,20 @@ mark_84 = abjad.LilyPondLiteral(
     format_slot="after",
 )
 
+met_75 = abjad.MetronomeMark((1, 4), 75)
+met_75_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 75)
+mark_75 = abjad.LilyPondLiteral(
+    [
+        r"^ \markup {",
+        r"  \huge",
+        r"  \concat {",
+        f"      {str(met_75_mark)[8:]}",
+        r"  }",
+        r"}",
+    ],
+    format_slot="after",
+)
+
 met_60 = abjad.MetronomeMark((1, 4), 60)
 met_60_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 60)
 mark_60 = abjad.LilyPondLiteral(
@@ -180,6 +194,22 @@ on_beat_grace_handler_2 = evans.OnBeatGraceHandler(
     boolean_vector=[1],
     vector_forget=False,
     name="On Beat Grace Handler 2",
+)
+
+on_beat_grace_handler_3 = evans.OnBeatGraceHandler(
+    number_of_attacks=[
+        7,
+    ],
+    durations=[
+        1,
+    ],
+    font_size=-4,
+    leaf_duration=(1, 100),
+    attack_number_forget=False,
+    durations_forget=False,
+    boolean_vector=[1],
+    vector_forget=False,
+    name="On Beat Grace Handler 3",
 )
 
 tone_to_air = evans.TextSpanHandler(

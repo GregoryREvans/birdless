@@ -55,6 +55,17 @@ squeal_pitch_handler_3 = evans.PitchHandler(
     forget=False,
 )
 
+squeal_pitch_walk_4 = evans.Sequence(squeal_pitch_source).random_walk(
+    length=38,
+    step_list=[4, 5, 3, 4],
+    random_seed=1,
+)
+
+squeal_pitch_handler_4 = evans.PitchHandler(
+    squeal_pitch_walk_4,
+    forget=False,
+)
+
 d_partials = evans.Sequence([_ + 2 for _ in range(10)]).mirror(
     sequential_duplicates=False,
 )
@@ -111,6 +122,23 @@ mult_pitch_handler = evans.PitchHandler(
         ["aqf''", "bqf''"],
         ["fqs'", "e''", "bqs''"],
         ["aqf''", "bqf''"],
+        ["eqs'", "fqs''", "cqs'''", "f'''"],
+        ["e'", "fqs''", "c'''", "f'''"],
+        ["eqs'", "fqs''", "cqs'''", "f'''"],
+        ["d''", "fqs''", "e'''", "bqf'''"],
+        ["d''", "fqs''", "e'''", "bqf'''"],
+        ["d''", "fqs''", "e'''", "bqf'''"],
+        ["cqs''", "g''", "e'''", "bf'''"],
+        ["cqs''", "g''", "e'''", "bf'''"],
+        ["c''", "eqf''", "d'''", "gs'''"],
+        ["c''", "eqf''", "d'''", "gs'''"],
+        ["gtqs'", "bqf''", "f'''"],
+        ["aqf''", "bqf''"],
+        ["gtqs'", "af''"],
+        ["aqf''", "bqf''"],
+        ["gtqs'", "af''"],
+        ["aqf''", "bqf''"],
+        ["gtqs'", "af''"],
     ],
     forget=False,
 )
@@ -149,4 +177,10 @@ warble_pitch_handler = evans.PitchHandler(
     apply_all=True,
     apply_all_spelling="sharp",
     name="warble_pitch_handler",
+)
+
+flourish_pitch_handler = evans.PitchHandler(
+    [2, 10, 6, 4, 3, 9, 10, 4, 3, 2],
+    forget=False,
+    name="flourish_pitch_handler",
 )
