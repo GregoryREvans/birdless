@@ -1,6 +1,7 @@
 import abjad
+import evans
 
-from birdless.lib import WarbleFingerings
+from birdless.lib import WarbleFingerings, slap_articulation_handler_08, warble_dynamics_08, slap_dynamics_08
 from birdless.materials.pitch import (
     flourish_pitch_handler,
     mult_pitch_handler,
@@ -372,4 +373,110 @@ pitch_materials_07 = [
     mult_pitch_handler_07,
     mult_pitch_handler_07,
     mult_pitch_handler_07,
+]
+
+## 08
+
+warble_rhythm_handler_08 = warble_rhythm_handler.make_persistent_copy(4)
+
+rhythm_materials_08 = [
+    warble_rhythm_handler_08,
+    warble_rhythm_handler_08,
+    warble_rhythm_handler_08,
+    warble_rhythm_handler_08,
+    slap_rhythm_handler,
+    warble_rhythm_handler_08,
+    warble_rhythm_handler_08,
+    warble_rhythm_handler_08,
+    warble_rhythm_handler_08,
+    slap_rhythm_handler,
+    slap_rhythm_handler,
+    warble_rhythm_handler_08,
+    warble_rhythm_handler_08,
+    warble_rhythm_handler_08,
+    slap_rhythm_handler,
+    slap_rhythm_handler,
+]
+
+slap_pitch_handler_08 = slap_pitch_handler.make_persistent_copy(
+    abjad.OrderedDict(
+        [
+            ('pitch_count', 2),
+            ('chord_boolean_count', -1),
+            ('chord_groups_count', -1),
+        ]
+    )
+)
+
+warble_pitch_handler_08 = warble_pitch_handler.make_persistent_copy(
+    abjad.OrderedDict(
+        [
+            ("pitch_count", 11),
+            ("chord_boolean_count", -1),
+            ("chord_groups_count", -1),
+        ]
+    )
+)
+
+pitch_materials_08 = [
+    warble_pitch_handler_08,
+    warble_pitch_handler_08,
+    warble_pitch_handler_08,
+    warble_pitch_handler_08,
+    slap_pitch_handler_08,
+    warble_pitch_handler_08,
+    warble_pitch_handler_08,
+    warble_pitch_handler_08,
+    warble_pitch_handler_08,
+    slap_pitch_handler_08,
+    slap_pitch_handler_08,
+    warble_pitch_handler_08,
+    warble_pitch_handler_08,
+    warble_pitch_handler_08,
+    slap_pitch_handler_08,
+    slap_pitch_handler_08,
+]
+
+fingering_numbers_08 = evans.Sequence([1, 2, 3]).permutations().flatten()
+
+fingerings_08 = [abjad.ColorFingering(_) for _ in fingering_numbers_08]
+
+warble_fingerings_08 = WarbleFingerings(fingerings_list=fingerings_08)
+
+articulation_materials_08 = [
+    warble_fingerings_08,
+    warble_fingerings_08,
+    warble_fingerings_08,
+    warble_fingerings_08,
+    slap_articulation_handler_08,
+    warble_fingerings_08,
+    warble_fingerings_08,
+    warble_fingerings_08,
+    warble_fingerings_08,
+    slap_articulation_handler_08,
+    slap_articulation_handler_08,
+    warble_fingerings_08,
+    warble_fingerings_08,
+    warble_fingerings_08,
+    slap_articulation_handler_08,
+    slap_articulation_handler_08,
+]
+
+dynamic_materials_08 = [
+    warble_dynamics_08,
+    warble_dynamics_08,
+    warble_dynamics_08,
+    warble_dynamics_08,
+    slap_dynamics_08,
+    warble_dynamics_08,
+    warble_dynamics_08,
+    warble_dynamics_08,
+    warble_dynamics_08,
+    slap_dynamics_08,
+    slap_dynamics_08,
+    warble_dynamics_08,
+    warble_dynamics_08,
+    warble_dynamics_08,
+    slap_dynamics_08,
+    slap_dynamics_08,
 ]

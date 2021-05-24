@@ -155,3 +155,34 @@ signatures_07 = [abjad.TimeSignature(_) for _ in meters_07]
 signatures_07.append(abjad.TimeSignature((3, 16)))  # for ending skip
 
 bounds_07 = abjad.math.cumulative_sums([_.duration for _ in signatures_07])
+
+##
+## 08
+##
+
+pairs_08 = (
+    (8, 4),
+    (7, 4),
+    (6, 4),
+    (5, 4),
+    (5, 6),
+    (4, 4),
+    (3, 4),
+    (4, 4),
+    (3, 4),
+    (4, 6),
+    (3, 6),
+    (7, 4),
+    (6, 4),
+    (5, 4),
+    (4, 6),
+    (5, 6),
+)
+
+meters_08 = [abjad.Meter(_) for _ in pairs_08]
+
+signatures_08 = [abjad.TimeSignature(_) for _ in meters_08]
+
+signatures_08.append(abjad.TimeSignature((3, 16)))  # for ending skip
+
+bounds_08 = abjad.math.cumulative_sums([_.duration for _ in signatures_08])

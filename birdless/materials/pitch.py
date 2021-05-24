@@ -6,6 +6,13 @@ octave_up = evans.PitchHandler(
     name="octave_up",
 )
 
+apply_octave_up = evans.PitchHandler(
+    [12],
+    forget=True,
+    apply_all=True,
+    name="apply_octave_up",
+)
+
 teeth_pitch_handler = evans.PitchHandler(
     [1, 4, 0, 7, 8],
     forget=False,
@@ -16,6 +23,7 @@ slap_source = evans.Sequence([5, 2, 6, 9]).permutations().flatten().transpose(12
 slap_pitch_handler = evans.PitchHandler(
     slap_source,
     forget=False,
+    name="slap_pitch_handler",
 )
 
 squeal_pitch_source = evans.Sequence([_ + 24 for _ in range(10)]).mirror(

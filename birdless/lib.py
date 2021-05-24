@@ -63,6 +63,20 @@ mark_108 = abjad.LilyPondLiteral(
     format_slot="after",
 )
 
+met_90 = abjad.MetronomeMark((1, 4), 90)
+met_90_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 90)
+mark_90 = abjad.LilyPondLiteral(
+    [
+        r"^ \markup {",
+        r"  \huge",
+        r"  \concat {",
+        f"      {str(met_90_mark)[8:]}",
+        r"  }",
+        r"}",
+    ],
+    format_slot="after",
+)
+
 met_84 = abjad.MetronomeMark((1, 4), 84)
 met_84_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 84)
 mark_84 = abjad.LilyPondLiteral(
@@ -230,3 +244,27 @@ def hide_tuplet(selections):
     for tuplet in abjad.select(selections).components(abjad.Tuplet):
         if tuplet.multiplier == abjad.Multiplier(1, 1):
             tuplet.hide = True
+
+slap_articulation_handler_08 = evans.ArticulationHandler(
+    ["snappizzicato"],
+    forget=False,
+    name="snap pizz",
+)
+
+warble_dynamics_08 = evans.DynamicHandler(
+    dynamic_list=["mf", "f", "mf", "mp", "f", "mf"],
+    flare_boolean_vector=[0, 1, 0],
+    flare_forget=False,
+    hold_last_boolean_vector=[0, 1],
+    hold_last_forget=False,
+    forget=False,
+    name="warble dynamics"
+)
+
+slap_dynamics_08 = evans.DynamicHandler(
+    dynamic_list=["mp", "ff", "f", "ff", "mf"],
+    hold_first_boolean_vector=[1],
+    hold_first_forget=False,
+    forget=False,
+    name="slap dynamics"
+)

@@ -92,6 +92,7 @@
                                 \override Staff.Stem.stemlet-length = 0.75
                                 d'16
                                 \mf
+                                ^ \normale-markup
                                 [
                                 ^ (
 
