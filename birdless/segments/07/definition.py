@@ -58,6 +58,11 @@ maker = evans.SegmentMaker(
         # ),
         evans.attach(
             "Voice 1",
+            abjad.Markup(r"\normale-markup", literal=True, direction=abjad.Up),
+            baca.leaf(0),
+        ),
+        evans.attach(
+            "Voice 1",
             abjad.StartSlur(direction=abjad.Up),
             baca.leaf(0),
         ),

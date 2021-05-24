@@ -102,6 +102,19 @@ diagram-even-markup = \markup {
     }
 }
 
+diagram-eight-markup = \markup {
+    \center-column
+    {
+        \override #'(size . 0.5)
+        \woodwind-diagram
+        #'alto-saxophone
+        #'(
+            (cc . (one two three five six))
+            (lh . ())
+            (rh . (low-c)))
+    }
+}
+
 diagram-nine-span-markup = \markup {
     \center-column
     {
@@ -172,8 +185,21 @@ diagram-thirteen-markup = \markup {
     	#'alto-saxophone
     	#'(
     		(cc . (one two three))
-    			(lh . (gis))
+    			(lh . (d gis))
     			(rh . ()))
+    }
+}
+
+diagram-fourteen-markup = \markup {
+    \center-column
+    {
+        \override #'(size . 0.5)
+        \woodwind-diagram
+        #'alto-saxophone
+        #'(
+            (cc . (two three))
+            (lh . (d))
+            (rh . ()))
     }
 }
 
@@ -185,7 +211,7 @@ diagram-fifteen-markup = \markup {
         #'alto-saxophone
         #'(
             (cc . (one two three))
-            (lh . (gis))
+            (lh . (ees d gis))
             (rh . ()))
     }
 }
