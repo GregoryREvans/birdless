@@ -1,13 +1,19 @@
 import abjad
 import evans
 
-from birdless.lib import WarbleFingerings, slap_articulation_handler_08, warble_dynamics_08, slap_dynamics_08
+from birdless.lib import (
+    WarbleFingerings,
+    slap_articulation_handler,
+    slap_dynamics_08,
+    warble_dynamics_08,
+)
 from birdless.materials.pitch import (
     flourish_pitch_handler,
     mult_pitch_handler,
     slap_pitch_handler,
     split_fundamental_handler,
     teeth_pitch_handler,
+    wailing_pitch_handler,
     warble_pitch_handler,
 )
 from birdless.materials.rhythm import (
@@ -401,9 +407,9 @@ rhythm_materials_08 = [
 slap_pitch_handler_08 = slap_pitch_handler.make_persistent_copy(
     abjad.OrderedDict(
         [
-            ('pitch_count', 2),
-            ('chord_boolean_count', -1),
-            ('chord_groups_count', -1),
+            ("pitch_count", 2),
+            ("chord_boolean_count", -1),
+            ("chord_groups_count", -1),
         ]
     )
 )
@@ -448,18 +454,18 @@ articulation_materials_08 = [
     warble_fingerings_08,
     warble_fingerings_08,
     warble_fingerings_08,
-    slap_articulation_handler_08,
+    slap_articulation_handler,
     warble_fingerings_08,
     warble_fingerings_08,
     warble_fingerings_08,
     warble_fingerings_08,
-    slap_articulation_handler_08,
-    slap_articulation_handler_08,
+    slap_articulation_handler,
+    slap_articulation_handler,
     warble_fingerings_08,
     warble_fingerings_08,
     warble_fingerings_08,
-    slap_articulation_handler_08,
-    slap_articulation_handler_08,
+    slap_articulation_handler,
+    slap_articulation_handler,
 ]
 
 dynamic_materials_08 = [
@@ -479,4 +485,43 @@ dynamic_materials_08 = [
     warble_dynamics_08,
     slap_dynamics_08,
     slap_dynamics_08,
+]
+
+## 09
+
+rhythm_materials_09 = [
+    slap_rhythm_handler,
+    slap_rhythm_handler,
+    slap_rhythm_handler,
+    slap_rhythm_handler,
+    slap_rhythm_handler,
+    note_rhythm_handler,
+]
+
+slap_pitch_handler_09 = slap_pitch_handler.make_persistent_copy(
+    abjad.OrderedDict(
+        [
+            ("pitch_count", 19),
+            ("chord_boolean_count", -1),
+            ("chord_groups_count", -1),
+        ]
+    )
+)
+
+pitch_materials_09 = [
+    slap_pitch_handler_09,
+    slap_pitch_handler_09,
+    slap_pitch_handler_09,
+    slap_pitch_handler_09,
+    slap_pitch_handler_09,
+    wailing_pitch_handler,
+]
+
+articulation_materials_09 = [
+    slap_articulation_handler,
+    slap_articulation_handler,
+    slap_articulation_handler,
+    slap_articulation_handler,
+    slap_articulation_handler,
+    silence_handler,
 ]

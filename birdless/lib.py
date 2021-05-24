@@ -35,6 +35,20 @@ class WarbleFingerings(evans.handlers.Handler):
         )
 
 
+met_130 = abjad.MetronomeMark((1, 4), 130)
+met_130_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 130)
+mark_130 = abjad.LilyPondLiteral(
+    [
+        r"^ \markup {",
+        r"  \huge",
+        r"  \concat {",
+        f"      {str(met_130_mark)[8:]}",
+        r"  }",
+        r"}",
+    ],
+    format_slot="after",
+)
+
 met_120 = abjad.MetronomeMark((1, 4), 120)
 met_120_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 120)
 mark_120 = abjad.LilyPondLiteral(
@@ -245,7 +259,8 @@ def hide_tuplet(selections):
         if tuplet.multiplier == abjad.Multiplier(1, 1):
             tuplet.hide = True
 
-slap_articulation_handler_08 = evans.ArticulationHandler(
+
+slap_articulation_handler = evans.ArticulationHandler(
     ["snappizzicato"],
     forget=False,
     name="snap pizz",
@@ -258,7 +273,7 @@ warble_dynamics_08 = evans.DynamicHandler(
     hold_last_boolean_vector=[0, 1],
     hold_last_forget=False,
     forget=False,
-    name="warble dynamics"
+    name="warble dynamics",
 )
 
 slap_dynamics_08 = evans.DynamicHandler(
@@ -266,5 +281,5 @@ slap_dynamics_08 = evans.DynamicHandler(
     hold_first_boolean_vector=[1],
     hold_first_forget=False,
     forget=False,
-    name="slap dynamics"
+    name="slap dynamics",
 )

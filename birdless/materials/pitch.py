@@ -192,3 +192,11 @@ flourish_pitch_handler = evans.PitchHandler(
     forget=False,
     name="flourish_pitch_handler",
 )
+
+wailing_pitch_handler = evans.PitchHandler(
+    [
+        ["fs'", "g''", "ctqs'''", "fs'''"],
+    ],
+    forget=False,
+    name="wailing handler",
+)
