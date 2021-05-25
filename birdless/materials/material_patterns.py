@@ -5,6 +5,7 @@ from birdless.lib import (
     WarbleFingerings,
     slap_articulation_handler,
     slap_dynamics_08,
+    squeal_dynamics,
     warble_dynamics_08,
 )
 from birdless.materials.pitch import (
@@ -17,11 +18,13 @@ from birdless.materials.pitch import (
     warble_pitch_handler,
 )
 from birdless.materials.rhythm import (
+    final_warble,
     flourish_rhythm_handler,
     mult_rhythm_handler,
     note_rhythm_handler,
     silence_handler,
     slap_rhythm_handler,
+    sub_tone_rhythm_handler,
     warble_rhythm_handler,
 )
 
@@ -524,4 +527,148 @@ articulation_materials_09 = [
     slap_articulation_handler,
     slap_articulation_handler,
     silence_handler,
+]
+
+## 10
+
+rhythm_materials_10 = [
+    note_rhythm_handler,
+    sub_tone_rhythm_handler,
+]
+
+flourish_pitch_handler_10 = flourish_pitch_handler.make_persistent_copy(
+    abjad.OrderedDict(
+        [
+            ("pitch_count", 9),
+            ("chord_boolean_count", -1),
+            ("chord_groups_count", -1),
+        ]
+    )
+)
+
+teeth_pitch_handler_10 = teeth_pitch_handler.make_persistent_copy(
+    abjad.OrderedDict(
+        [
+            ("pitch_count", 42),
+            ("chord_boolean_count", -1),
+            ("chord_groups_count", -1),
+        ]
+    )
+)
+
+pitch_materials_10 = [
+    teeth_pitch_handler_10,
+    flourish_pitch_handler_10,
+]
+
+dynamic_materials_10 = [
+    squeal_dynamics,
+    silence_handler,
+]
+
+## 11
+
+rhythm_materials_11 = [
+    note_rhythm_handler,
+    slap_rhythm_handler,
+    note_rhythm_handler,
+    note_rhythm_handler,
+    slap_rhythm_handler,
+    note_rhythm_handler,
+    note_rhythm_handler,
+    note_rhythm_handler,
+    slap_rhythm_handler,
+    note_rhythm_handler,
+    note_rhythm_handler,
+    note_rhythm_handler,
+    note_rhythm_handler,
+]
+
+slap_pitch_handler_11 = slap_pitch_handler.make_persistent_copy(
+    abjad.OrderedDict(
+        [
+            ("pitch_count", 36),
+            ("chord_boolean_count", -1),
+            ("chord_groups_count", -1),
+        ]
+    )
+)
+
+teeth_pitch_handler_11 = teeth_pitch_handler.make_persistent_copy(
+    abjad.OrderedDict(
+        [
+            ("pitch_count", 48),
+            ("chord_boolean_count", -1),
+            ("chord_groups_count", -1),
+        ]
+    )
+)
+
+pitch_materials_11 = [
+    teeth_pitch_handler_11,
+    slap_pitch_handler_11,
+    teeth_pitch_handler_11,
+    teeth_pitch_handler_11,
+    slap_pitch_handler_11,
+    teeth_pitch_handler_11,
+    teeth_pitch_handler_11,
+    teeth_pitch_handler_11,
+    slap_pitch_handler_11,
+    teeth_pitch_handler_11,
+    teeth_pitch_handler_11,
+    teeth_pitch_handler_11,
+    teeth_pitch_handler_11,
+]
+
+articulation_materials_11 = [
+    silence_handler,
+    slap_articulation_handler,
+    silence_handler,
+    silence_handler,
+    slap_articulation_handler,
+    silence_handler,
+    silence_handler,
+    silence_handler,
+    slap_articulation_handler,
+    silence_handler,
+    silence_handler,
+    silence_handler,
+    silence_handler,
+]
+
+## 12
+
+rhythm_materials_12 = [
+    final_warble,
+    note_rhythm_handler,
+]
+
+final_warble_pitch = evans.PitchHandler(
+    ["a''"],
+    name="final warble",
+)
+
+wailing = evans.PitchHandler(
+    [["fs'", "g''", "ctqs'''", "fs'''"]],
+    name="wailing",
+)
+
+pitch_materials_12 = [
+    final_warble_pitch,
+    wailing,
+]
+
+## 13
+
+rhythm_materials_13 = [
+    note_rhythm_handler,
+]
+
+final_wailing = evans.PitchHandler(
+    [["cs''", "ds'''", "aqs'''"]],
+    name="wailing",
+)
+
+pitch_materials_13 = [
+    final_wailing,
 ]

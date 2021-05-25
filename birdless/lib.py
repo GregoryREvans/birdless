@@ -1,3 +1,5 @@
+from random import seed, shuffle
+
 import abjad
 import evans
 
@@ -133,6 +135,20 @@ mark_60 = abjad.LilyPondLiteral(
     format_slot="after",
 )
 
+met_45 = abjad.MetronomeMark((1, 4), 45)
+met_45_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 45)
+mark_45 = abjad.LilyPondLiteral(
+    [
+        r"^ \markup {",
+        r"  \huge",
+        r"  \concat {",
+        f"      {str(met_45_mark)[8:]}",
+        r"  }",
+        r"}",
+    ],
+    format_slot="after",
+)
+
 met_40 = abjad.MetronomeMark((1, 4), 40)
 met_40_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 40)
 mark_40 = abjad.LilyPondLiteral(
@@ -141,6 +157,20 @@ mark_40 = abjad.LilyPondLiteral(
         r"  \huge",
         r"  \concat {",
         f"      {str(met_40_mark)[8:]}",
+        r"  }",
+        r"}",
+    ],
+    format_slot="after",
+)
+
+met_30 = abjad.MetronomeMark((1, 4), 30)
+met_30_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 30)
+mark_30 = abjad.LilyPondLiteral(
+    [
+        r"^ \markup {",
+        r"  \huge",
+        r"  \concat {",
+        f"      {str(met_30_mark)[8:]}",
         r"  }",
         r"}",
     ],
@@ -240,6 +270,52 @@ on_beat_grace_handler_3 = evans.OnBeatGraceHandler(
     name="On Beat Grace Handler 3",
 )
 
+on_beat_grace_handler_4 = evans.OnBeatGraceHandler(
+    number_of_attacks=[
+        15,
+        10,
+        13,
+        6,
+        12,
+        4,
+    ],
+    durations=[
+        1,
+    ],
+    font_size=-4,
+    leaf_duration=(1, 100),
+    attack_number_forget=False,
+    durations_forget=False,
+    boolean_vector=[1],
+    vector_forget=False,
+    name="On Beat Grace Handler 4",
+)
+
+on_beat_grace_handler_5 = evans.OnBeatGraceHandler(
+    number_of_attacks=[
+        15,
+        15,
+        9,
+        15,
+        9,
+        7,
+        15,
+        9,
+        7,
+        4,
+    ],
+    durations=[
+        1,
+    ],
+    font_size=-4,
+    leaf_duration=(1, 100),
+    attack_number_forget=False,
+    durations_forget=False,
+    boolean_vector=[1],
+    vector_forget=False,
+    name="On Beat Grace Handler 5",
+)
+
 tone_to_air = evans.TextSpanHandler(
     span_one_positions=["tone", "air"],
     span_one_style="dashed-line",
@@ -283,3 +359,19 @@ slap_dynamics_08 = evans.DynamicHandler(
     forget=False,
     name="slap dynamics",
 )
+
+squeal_dynamics = evans.DynamicHandler(
+    dynamic_list=["p", "fff"],
+    forget=False,
+    name="squeal dynamics",
+)
+
+final_fingering_numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+seed(0)
+
+shuffle(final_fingering_numbers)
+
+final_fingerings = [abjad.ColorFingering(_) for _ in final_fingering_numbers]
+
+final_warble_fingerings = WarbleFingerings(fingerings_list=final_fingerings)

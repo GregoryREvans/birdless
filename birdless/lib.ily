@@ -230,12 +230,12 @@ colophon = \markup
         \with-color #black
         \line
         {
-            Panama City Beach, Fl. \hspace #0.75 - \hspace #0.75 Spring Valley, Oh.
+            Iowa City, Ia.
         }
         \with-color #black
         \line
         {
-            \hspace #0.75 March 2021
+            \hspace #0.75 May 2021
         }
     }
 }
@@ -243,3 +243,5 @@ colophon = \markup
 teeth-on-reed-markup = \markup \override #'(style . "box") \override #'(box-padding . 0.5) \italic \box \whiteout \small "teeth on reed"
 
 normale-markup = \markup \override #'(style . "box") \override #'(box-padding . 0.5) \italic \box \whiteout \small "normale"
+
+sub-tone-markup = \markup \override #'(style . "box") \override #'(box-padding . 0.5) \italic \box \whiteout \small "sub tone"

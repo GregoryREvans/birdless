@@ -121,3 +121,34 @@ flourish_rhythm_handler = evans.RhythmHandler(
     forget=False,
     name="flourish_rhythm_handler",
 )
+
+sub_tone_rhythm_maker = rmakers.stack(
+    rmakers.talea([2, 3, 2, 4, 5, 7, 6], 8, extra_counts=[0, 1, -1]),
+    rmakers.trivialize(abjad.select().tuplets()),
+    rmakers.extract_trivial(abjad.select().tuplets()),
+    rmakers.rewrite_rest_filled(abjad.select().tuplets()),
+    rmakers.rewrite_sustained(abjad.select().tuplets()),
+)
+
+sub_tone_rhythm_handler = evans.RhythmHandler(
+    rmaker=sub_tone_rhythm_maker,
+    forget=False,
+    name="sub_tone_rhythm_handler",
+)
+
+final_warble = evans.RhythmHandler(
+    rmakers.stack(
+        rmakers.talea(
+            [2, 2, 1, 1, 2, 1, 1, 2, 2, 1, 1, 1],
+            16,
+            preamble=[3],
+            end_counts=[4],
+            extra_counts=[0, 1, 2, 3, 2, 1],
+        ),
+        rmakers.trivialize(abjad.select().tuplets()),
+        rmakers.extract_trivial(abjad.select().tuplets()),
+        rmakers.rewrite_rest_filled(abjad.select().tuplets()),
+        rmakers.rewrite_sustained(abjad.select().tuplets()),
+    ),
+    forget=False,
+)
