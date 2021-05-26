@@ -79,12 +79,12 @@
                                 \tweak Accidental.text \abjad-natural-markup
                                 b''4
                                 \p
-                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 1 }
+                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 5 }
 
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-natural-markup
                                 b''4
-                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 3 }
+                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 4 }
 
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-natural-markup
@@ -94,7 +94,7 @@
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-natural-markup
                                 b''2
-                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 1 }
+                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 3 }
 
                                 \times 4/5 {
 
@@ -102,29 +102,29 @@
                                     \tweak Accidental.stencil #ly:text-interface::print
                                     \tweak Accidental.text \abjad-natural-markup
                                     b''8
-                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 5 }
+                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 2 }
                                     [
 
                                     \tweak Accidental.stencil #ly:text-interface::print
                                     \tweak Accidental.text \abjad-natural-markup
                                     b''8
-                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 4 }
+                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 1 }
+
+                                    \tweak Accidental.stencil #ly:text-interface::print
+                                    \tweak Accidental.text \abjad-natural-markup
+                                    b''8
+                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 5 }
 
                                     \tweak Accidental.stencil #ly:text-interface::print
                                     \tweak Accidental.text \abjad-natural-markup
                                     b''8
                                     ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 2 }
 
-                                    \tweak Accidental.stencil #ly:text-interface::print
-                                    \tweak Accidental.text \abjad-natural-markup
-                                    b''8
-                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 3 }
-
                                     \revert Staff.Stem.stemlet-length
                                     \tweak Accidental.stencil #ly:text-interface::print
                                     \tweak Accidental.text \abjad-natural-markup
                                     b''8
-                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 1 }
+                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 3 }
                                     ]
 
                                 }
@@ -134,17 +134,17 @@
                                     \tweak Accidental.stencil #ly:text-interface::print
                                     \tweak Accidental.text \abjad-natural-markup
                                     b''4
+                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 1 }
+
+                                    \tweak Accidental.stencil #ly:text-interface::print
+                                    \tweak Accidental.text \abjad-natural-markup
+                                    b''4
                                     ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 2 }
 
                                     \tweak Accidental.stencil #ly:text-interface::print
                                     \tweak Accidental.text \abjad-natural-markup
                                     b''4
                                     ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 3 }
-
-                                    \tweak Accidental.stencil #ly:text-interface::print
-                                    \tweak Accidental.text \abjad-natural-markup
-                                    b''4
-                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 2 }
 
                                 }
 
@@ -157,35 +157,35 @@
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-sharp-markup
                                 fs''4
-                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 1 }
+                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 9 }
 
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-sharp-markup
                                 fs''4
-                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 3 }
+                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 4 }
 
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-sharp-markup
                                 fs''2.
-                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 2 }
+                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 5 }
 
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-sharp-markup
                                 fs''2.
-                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 1 }
+                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 7 }
 
                                 \times 2/3 {
 
                                     \tweak Accidental.stencil #ly:text-interface::print
                                     \tweak Accidental.text \abjad-sharp-markup
                                     fs''4
-                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 5 }
+                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 6 }
 
                                     \override Staff.Stem.stemlet-length = 0.75
                                     \tweak Accidental.stencil #ly:text-interface::print
                                     \tweak Accidental.text \abjad-sharp-markup
                                     fs''8
-                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 4 }
+                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 3 }
                                     [
 
                                     \tweak Accidental.stencil #ly:text-interface::print
@@ -196,13 +196,13 @@
                                     \tweak Accidental.stencil #ly:text-interface::print
                                     \tweak Accidental.text \abjad-sharp-markup
                                     fs''8
-                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 3 }
+                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 1 }
 
                                     \revert Staff.Stem.stemlet-length
                                     \tweak Accidental.stencil #ly:text-interface::print
                                     \tweak Accidental.text \abjad-sharp-markup
                                     fs''8
-                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 1 }
+                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 3 }
                                     ]
 
                                 }
@@ -217,12 +217,12 @@
                                     \tweak Accidental.stencil #ly:text-interface::print
                                     \tweak Accidental.text \abjad-sharp-markup
                                     fs''8
-                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 3 }
+                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 9 }
 
                                     \tweak Accidental.stencil #ly:text-interface::print
                                     \tweak Accidental.text \abjad-sharp-markup
                                     fs''4
-                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 2 }
+                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 8 }
 
                                 }
 
@@ -329,24 +329,24 @@
                                 as''4.
                                 \mp
                                 ^ \normale-markup
-                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 1 }
+                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 9 }
 
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-sharp-markup
                                 as''8
-                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 3 }
+                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 2 }
 
                                 \times 2/3 {
 
                                     \tweak Accidental.stencil #ly:text-interface::print
                                     \tweak Accidental.text \abjad-sharp-markup
                                     as''4
-                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 2 }
+                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 4 }
 
                                     \tweak Accidental.stencil #ly:text-interface::print
                                     \tweak Accidental.text \abjad-sharp-markup
                                     as''2
-                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 1 }
+                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 3 }
 
                                 }
 
@@ -367,39 +367,39 @@
                                     \tweak Accidental.stencil #ly:text-interface::print
                                     \tweak Accidental.text \abjad-sharp-markup
                                     as''8
-                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 2 }
+                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 6 }
 
                                     \revert Staff.Stem.stemlet-length
                                     \tweak Accidental.stencil #ly:text-interface::print
                                     \tweak Accidental.text \abjad-sharp-markup
                                     as''8
-                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 3 }
+                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 5 }
                                     ]
 
                                     \tweak Accidental.stencil #ly:text-interface::print
                                     \tweak Accidental.text \abjad-sharp-markup
                                     as''4
-                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 1 }
+                                    ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 7 }
 
                                 }
 
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-sharp-markup
                                 as''4
-                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 2 }
+                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 6 }
 
                                 \override Staff.Stem.stemlet-length = 0.75
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-sharp-markup
                                 as''8
-                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 3 }
+                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 8 }
                                 [
 
                                 \revert Staff.Stem.stemlet-length
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-sharp-markup
                                 as''8
-                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 2 }
+                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 1 }
                                 ]
 
                             }
@@ -408,12 +408,12 @@
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \abjad-natural-markup
                             g''4
-                            ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 1 }
+                            ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 2 }
 
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \abjad-natural-markup
                             g''4
-                            ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 3 }
+                            ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 1 }
 
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \abjad-natural-markup
@@ -431,13 +431,13 @@
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-natural-markup
                                 g''8
-                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 5 }
+                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 2 }
                                 [
 
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-natural-markup
                                 g''8
-                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 4 }
+                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 1 }
 
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-natural-markup
@@ -447,13 +447,13 @@
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-natural-markup
                                 g''8
-                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 3 }
+                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 1 }
 
                                 \revert Staff.Stem.stemlet-length
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-natural-markup
                                 g''8
-                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 1 }
+                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 2 }
                                 ]
 
                             }
@@ -463,17 +463,17 @@
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-natural-markup
                                 g''4
-                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 2 }
-
-                                \tweak Accidental.stencil #ly:text-interface::print
-                                \tweak Accidental.text \abjad-natural-markup
-                                g''4
-                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 3 }
+                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 1 }
 
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-natural-markup
                                 g''4
                                 ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 2 }
+
+                                \tweak Accidental.stencil #ly:text-interface::print
+                                \tweak Accidental.text \abjad-natural-markup
+                                g''4
+                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 1 }
 
                             }
 
@@ -483,7 +483,7 @@
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-natural-markup
                                 c'''8
-                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 1 }
+                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 8 }
 
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-natural-markup
@@ -512,7 +512,7 @@
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-natural-markup
                                 c'''16
-                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 5 }
+                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 6 }
                                 [
 
                                 \tweak Accidental.stencil #ly:text-interface::print
@@ -523,18 +523,18 @@
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-natural-markup
                                 c'''16
-                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 2 }
+                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 5 }
 
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-natural-markup
                                 c'''16
-                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 3 }
+                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 7 }
 
                                 \revert Staff.Stem.stemlet-length
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-natural-markup
                                 c'''16
-                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 1 }
+                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 6 }
                                 ]
 
                             }
@@ -545,19 +545,19 @@
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-natural-markup
                                 c'''8
-                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 2 }
+                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 7 }
                                 [
 
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-natural-markup
                                 c'''8
-                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 3 }
+                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 4 }
 
                                 \revert Staff.Stem.stemlet-length
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-natural-markup
                                 c'''8
-                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 2 }
+                                ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 3 }
                                 ]
 
                             }

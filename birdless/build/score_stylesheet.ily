@@ -8,7 +8,7 @@
 \header {
 	tagline = ##f
 	breakbefore = ##t
-	dedication = \markup \override #'(font-name . "STIXGeneral") \fontsize #3.4 \center-column {"t o   S t e p h   T a m a s" \with-color #white "."}
+	dedication = \markup \override #'(font-name . "STIXGeneral") \fontsize #3.4 \center-column {"t o   S t e p h e n   F .   T a m a s" \with-color #white "."}
 	title =  \markup \override #'(font-name . "STIXGeneral") \fontsize #11 \bold\center-column {"Birdless, Cloudless, Colourless" }
 	subtitle = \markup \center-column { \with-color #white "." \override #'(font-name . "STIXGeneral") \fontsize #5.27 "o r ,   b a t s   i n   O h i o" }
 	subsubtitle = \markup \center-column { \with-color #white "." \override #'(font-name . "STIXGeneral") \fontsize #2.27 "for alto saxophone" }
@@ -95,7 +95,7 @@
 		\override TupletNumber.font-size = 0.5
 		\override TupletNumber.text = #tuplet-number::calc-fraction-text
 		autoBeaming = ##f
-		proportionalNotationDuration = #(ly:make-moment 1 19)
+		proportionalNotationDuration = #(ly:make-moment 1 17)
 		tupletFullLength = ##t
 	}
 	\context {
@@ -107,6 +107,9 @@
 		\Staff
 		\numericTimeSignature
 		%{ \remove Time_signature_engraver %}
+		\override TimeSignature.whiteout-style = #'outline
+		\override TimeSignature.whiteout = ##t
+		\override TimeSignature.whiteout = 2
 		fontSize = #-1
 	}
 	\context {
