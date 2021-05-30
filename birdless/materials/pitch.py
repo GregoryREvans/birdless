@@ -74,6 +74,18 @@ squeal_pitch_handler_4 = evans.PitchHandler(
     forget=False,
 )
 
+squeal_pitch_walk_5 = evans.Sequence([24, 26, 28, 29, 31, 29, 28, 26]).random_walk(
+    length=10,
+    step_list=[1],
+    random_seed=3,
+)
+
+squeal_pitch_handler_5 = evans.PitchHandler(
+    squeal_pitch_walk_5,
+    forget=False,
+)
+
+
 d_partials = evans.Sequence([_ + 2 for _ in range(10)]).mirror(
     sequential_duplicates=False,
 )
@@ -199,4 +211,17 @@ wailing_pitch_handler = evans.PitchHandler(
     ],
     forget=False,
     name="wailing handler",
+)
+
+tender_mult = evans.PitchHandler(
+    [
+        ["gtqs'", "bqf''", "f'''"],
+        ["aqf''", "bqf''"],
+        ["aqf''", "bqf''"],
+        ["aqf''", "bqf''"],
+        ["aqf''", "bqf''"],
+        ["aqf''", "bqf''"],
+        ["aqf''", "bqf''"],
+    ],
+    forget=False,
 )

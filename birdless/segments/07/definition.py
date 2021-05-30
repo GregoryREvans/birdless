@@ -1,7 +1,6 @@
 import pathlib
 
 import abjad
-import baca
 import evans
 
 from birdless.lib import (
@@ -59,209 +58,209 @@ maker = evans.SegmentMaker(
         evans.attach(
             "Voice 1",
             abjad.Markup(r"\normale-markup", literal=True, direction=abjad.Up),
-            baca.leaf(0),
+            abjad.select().leaf(0),
         ),
         evans.attach(
             "Voice 1",
             abjad.StartSlur(direction=abjad.Up),
-            baca.leaf(0),
+            abjad.select().leaf(0),
         ),
         evans.attach(
             "Voice 1",
             abjad.StopSlur(),
-            baca.leaf(9),
+            abjad.select().leaf(9),
         ),
         evans.attach(
             "Voice 1",
             abjad.StartTrillSpan(),
-            baca.leaf(9),
+            abjad.select().leaf(9),
         ),
         evans.attach(
             "Voice 1",
             abjad.StopTrillSpan(),
-            baca.leaf(10),
+            abjad.select().leaf(10),
         ),
         evans.attach(
             "Voice 1",
             abjad.Markup(r"\diagram-ix-markup", literal=True, direction=abjad.Up),
-            baca.leaf(10),
+            abjad.select().leaf(10),
         ),
         evans.attach(
             "Voice 1",
             abjad.Markup(r"\diagram-even-markup", literal=True, direction=abjad.Up),
-            baca.leaf(11),
+            abjad.select().leaf(11),
         ),
         evans.attach(
             "Voice 1",
             abjad.Markup(r"\diagram-ix-markup", literal=True, direction=abjad.Up),
-            baca.leaf(13),
+            abjad.select().leaf(13),
         ),
         evans.attach(
             "Voice 1",
             abjad.Markup(r"\diagram-fifteen-markup", literal=True, direction=abjad.Up),
-            baca.leaf(14),
+            abjad.select().leaf(14),
         ),
         evans.attach(
             "Voice 1",
             abjad.Markup(r"\diagram-fifteen-markup", literal=True, direction=abjad.Up),
-            baca.leaf(15),
+            abjad.select().leaf(15),
         ),
         evans.attach(
             "Voice 1",
             abjad.Markup(r"\diagram-fifteen-markup", literal=True, direction=abjad.Up),
-            baca.leaf(16),
+            abjad.select().leaf(16),
         ),
         evans.attach(
             "Voice 1",
             abjad.Markup(r"\diagram-thirteen-markup", literal=True, direction=abjad.Up),
-            baca.leaf(18),
+            abjad.select().leaf(18),
         ),
         evans.attach(
             "Voice 1",
             abjad.Markup(r"\diagram-thirteen-markup", literal=True, direction=abjad.Up),
-            baca.leaf(19),
+            abjad.select().leaf(19),
         ),
         evans.attach(
             "Voice 1",
             abjad.Markup(r"\diagram-twelve-markup", literal=True, direction=abjad.Up),
-            baca.leaf(23),
+            abjad.select().leaf(23),
         ),
         evans.attach(
             "Voice 1",
             abjad.Markup(r"\diagram-twelve-markup", literal=True, direction=abjad.Up),
-            baca.leaf(25),
+            abjad.select().leaf(25),
         ),
         evans.attach(
             "Voice 1",
             start_span,
-            baca.leaf(26),
+            abjad.select().leaf(26),
         ),
         evans.attach(
             "Voice 1",
             abjad.StopTextSpan(),
-            baca.leaf(-2),
+            abjad.select().leaf(-2),
         ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("mf"),
-            baca.leaf(0),
+            abjad.select().leaf(0),
         ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("ff"),
-            baca.leaf(10),
+            abjad.select().leaf(10),
         ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("f"),
-            baca.leaf(24),
+            abjad.select().leaf(24),
         ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("ff"),
-            baca.leaf(25),
+            abjad.select().leaf(25),
         ),
         evans.attach(
             "Voice 1",
             abjad.StartHairpin(">"),
-            baca.leaf(25),
+            abjad.select().leaf(25),
         ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("p"),
-            baca.leaf(28),
+            abjad.select().leaf(28),
         ),
         evans.attach(
             "Voice 1",
             abjad.StartHairpin(">"),
-            baca.leaf(28),
+            abjad.select().leaf(28),
         ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("pp"),
-            baca.leaf(30),
+            abjad.select().leaf(30),
         ),
         evans.attach(
             "Voice 1",
             abjad.StartHairpin("<"),
-            baca.leaf(30),
+            abjad.select().leaf(30),
         ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("p"),
-            baca.leaf(31),
+            abjad.select().leaf(31),
         ),
         evans.attach(
             "Voice 1",
             abjad.StartHairpin(">"),
-            baca.leaf(31),
+            abjad.select().leaf(31),
         ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("pp"),
-            baca.leaf(32),
+            abjad.select().leaf(32),
         ),
         evans.attach(
             "Voice 1",
             abjad.StartHairpin("<"),
-            baca.leaf(32),
+            abjad.select().leaf(32),
         ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("p"),
-            baca.leaf(34),
+            abjad.select().leaf(34),
         ),
         evans.attach(
             "Voice 1",
             abjad.StartHairpin(">"),
-            baca.leaf(34),
+            abjad.select().leaf(34),
         ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("pp"),
-            baca.leaf(35),
+            abjad.select().leaf(35),
         ),
         evans.call(
             "Voice 1",
             abjad.glissando,
-            baca.leaves().get([26, 27, 28, 29, 30, 31, 32, 33, 34, 35]),
+            abjad.select().leaves().get([26, 27, 28, 29, 30, 31, 32, 33, 34, 35]),
         ),
         evans.call(
             "Voice 1",
             on_beat_grace_handler_3,
-            baca.leaf(24),
+            abjad.select().leaf(24),
         ),
         evans.attach(
             "Staff 1",
             abjad.Markup(r"\teeth-on-reed-markup", literal=True, direction=abjad.Up),
-            baca.leaf(24, grace=False),
+            abjad.select().leaf(24, grace=False),
         ),
         evans.call(
             "Staff 1",
             squeal_pitch_handler_4,
-            baca.leaves(grace=True),
+            abjad.select().leaves(grace=True),
         ),
         evans.call(
             "Staff 1",
             zero_padding_glissando,
-            baca.leaves(grace=True),
+            abjad.select().leaves(grace=True),
         ),
         evans.attach(
             "Staff 1",
             abjad.Markup(r"\normale-markup", literal=True, direction=abjad.Up),
-            baca.leaf(25, grace=False),
+            abjad.select().leaf(25, grace=False),
         ),
         evans.attach(
             "Staff 1",
             abjad.Markup(
                 r"\markup { \raise #4 c.5'}", direction=abjad.Up, literal=True
             ),
-            baca.leaf(-1, grace=False),
+            abjad.select().leaf(-1, grace=False),
         ),
         evans.attach(
             "Global Context",
             mark_75,
-            baca.leaf(0),
+            abjad.select().leaf(0),
         ),
     ],
     score_template=score,

@@ -1,7 +1,6 @@
 import pathlib
 
 import abjad
-import baca
 import evans
 
 from birdless.materials.instruments import instruments
@@ -40,24 +39,24 @@ maker = evans.SegmentMaker(
         evans.attach(
             "Voice 1",
             abjad.Dynamic("fff"),
-            baca.leaf(0),
+            abjad.select().leaf(0),
         ),
         evans.attach(
             "Voice 1",
             abjad.Markup(r"\diagram-fourteen-markup", literal=True, direction=abjad.Up),
-            baca.leaf(0),
+            abjad.select().leaf(0),
         ),
         evans.attach(
             "Voice 1",
             abjad.Markup(r"\diagram-fourteen-markup", literal=True, direction=abjad.Up),
-            baca.leaf(1),
+            abjad.select().leaf(1),
         ),
     ],
     score_template=score,
     time_signatures=signatures_13,
     clef_handlers=None,
     tuplet_bracket_noteheads=False,
-    add_final_grand_pause=True,
+    add_final_grand_pause=False,
     score_includes=[
         "/Users/evansdsg2/abjad/docs/source/_stylesheets/abjad.ily",
         "/Users/evansdsg2/Scores/birdless/birdless/build/score_stylesheet.ily",
@@ -67,12 +66,11 @@ maker = evans.SegmentMaker(
     cutaway=False,
     beam_pattern="meter",
     beam_rests=False,
-    barline="|.",
+    barline="||",
     tempo=((1, 4), 30),
     rehearsal_mark=" ",
     fermata="scripts.uverylongfermata",
     page_break_counts=[90],
-    colophon=abjad.Markup(r"\colophon", literal=True),
 )
 
 maker.build_segment()

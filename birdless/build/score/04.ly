@@ -1,13 +1,15 @@
-
     \context Score = "birdless Score"
     <<
 
         \context TimeSignatureContext = "Global Context"
         {
-            % [Global Context measure 1]                                       %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+            %! COMMENT_MEASURE_NUMBERS
+            %! abjad.SegmentMaker.comment_measure_numbers()
+            % [Global Context measure 1]
 
             \tempo 4=84
-            \time 6/4                                                          %! scaling time signatures
+            %! scaling time signatures
+            \time 6/4
             \mark \markup \bold {  }
             s1 * 3/2
             ^ \markup {
@@ -16,49 +18,82 @@
                   \abjad-metronome-mark-markup #2 #0 #1 #"84"
               }
             }
-            % [Global Context measure 2]                                       %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+            %! COMMENT_MEASURE_NUMBERS
+            %! abjad.SegmentMaker.comment_measure_numbers()
+            % [Global Context measure 2]
 
-            \time 7/4                                                          %! scaling time signatures
+            %! scaling time signatures
+            \time 7/4
             s1 * 7/4
-            % [Global Context measure 3]                                       %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+            %! COMMENT_MEASURE_NUMBERS
+            %! abjad.SegmentMaker.comment_measure_numbers()
+            % [Global Context measure 3]
 
-            \time 5/4                                                          %! scaling time signatures
+            %! scaling time signatures
+            \time 5/4
             s1 * 5/4
-            % [Global Context measure 4]                                       %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+            %! COMMENT_MEASURE_NUMBERS
+            %! abjad.SegmentMaker.comment_measure_numbers()
+            % [Global Context measure 4]
 
-            \time 8/4                                                          %! scaling time signatures
+            %! scaling time signatures
+            \time 8/4
             s1 * 2
-            % [Global Context measure 5]                                       %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+            %! COMMENT_MEASURE_NUMBERS
+            %! abjad.SegmentMaker.comment_measure_numbers()
+            % [Global Context measure 5]
 
-            \time 7/8                                                          %! scaling time signatures
+            %! scaling time signatures
+            \time 7/8
             s1 * 7/8
-            % [Global Context measure 6]                                       %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+            %! COMMENT_MEASURE_NUMBERS
+            %! abjad.SegmentMaker.comment_measure_numbers()
+            % [Global Context measure 6]
 
-            \time 3/4                                                          %! scaling time signatures
+            %! scaling time signatures
+            \time 3/4
             s1 * 3/4
-            % [Global Context measure 7]                                       %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+            %! COMMENT_MEASURE_NUMBERS
+            %! abjad.SegmentMaker.comment_measure_numbers()
+            % [Global Context measure 7]
 
-            \time 7/4                                                          %! scaling time signatures
+            %! scaling time signatures
+            \time 7/4
             s1 * 7/4
-            % [Global Context measure 8]                                       %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+            %! COMMENT_MEASURE_NUMBERS
+            %! abjad.SegmentMaker.comment_measure_numbers()
+            % [Global Context measure 8]
 
-            \time 6/8                                                          %! scaling time signatures
+            %! scaling time signatures
+            \time 6/8
             s1 * 3/4
-            % [Global Context measure 9]                                       %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+            %! COMMENT_MEASURE_NUMBERS
+            %! abjad.SegmentMaker.comment_measure_numbers()
+            % [Global Context measure 9]
 
-            \time 5/8                                                          %! scaling time signatures
+            %! scaling time signatures
+            \time 5/8
             s1 * 5/8
-            % [Global Context measure 10]                                      %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+            %! COMMENT_MEASURE_NUMBERS
+            %! abjad.SegmentMaker.comment_measure_numbers()
+            % [Global Context measure 10]
 
-            \time 4/4                                                          %! scaling time signatures
+            %! scaling time signatures
+            \time 4/4
             s1 * 1
-            % [Global Context measure 11]                                      %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+            %! COMMENT_MEASURE_NUMBERS
+            %! abjad.SegmentMaker.comment_measure_numbers()
+            % [Global Context measure 11]
 
-            \time 4/8                                                          %! scaling time signatures
+            %! scaling time signatures
+            \time 4/8
             s1 * 1/2
-            % [Global Context measure 12]                                      %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+            %! COMMENT_MEASURE_NUMBERS
+            %! abjad.SegmentMaker.comment_measure_numbers()
+            % [Global Context measure 12]
 
-            \time 3/8                                                          %! scaling time signatures
+            %! scaling time signatures
+            \time 3/8
             s1 * 3/8
 
         }
@@ -77,12 +112,18 @@
 
                         \context Voice = "Voice 1"
                         {
-                            % [Voice 1 measure 1]                              %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+                            %! COMMENT_MEASURE_NUMBERS
+                            %! abjad.SegmentMaker.comment_measure_numbers()
+                            % [Voice 1 measure 1]
 
-                            \set Staff.shortInstrumentName =                   %! applying staff names and clefs
-                            \markup { \hcenter-in #12 " " }                    %! applying staff names and clefs
-                            \set Staff.instrumentName =                        %! applying staff names and clefs
-                            \markup { \hcenter-in #14 "Alto Saxophone" }       %! applying staff names and clefs
+                            %! applying staff names and clefs
+                            \set Staff.shortInstrumentName =
+                            %! applying staff names and clefs
+                            \markup { \hcenter-in #12 " " }
+                            %! applying staff names and clefs
+                            \set Staff.instrumentName =
+                            %! applying staff names and clefs
+                            \markup { \hcenter-in #14 "Alto Saxophone" }
                             \override Staff.Stem.stemlet-length = 0.75
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \abjad-natural-markup
@@ -127,7 +168,8 @@
                             ]
 
                             \tweak text #tuplet-number::calc-fraction-text
-                            \times 3/5 {
+                            \times 3/5
+                            {
 
                                 \override Staff.Stem.stemlet-length = 0.75
                                 \tweak Accidental.stencil #ly:text-interface::print
@@ -180,8 +222,11 @@
                             ]
 
                             \tweak text #tuplet-number::calc-fraction-text
-                            \times 14/24 {
-                                % [Voice 1 measure 2]                          %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+                            \times 14/24
+                            {
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! abjad.SegmentMaker.comment_measure_numbers()
+                                % [Voice 1 measure 2]
 
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-natural-markup
@@ -225,7 +270,8 @@
                             b'8
 
                             \tweak text #tuplet-number::calc-fraction-text
-                            \times 28/40 {
+                            \times 28/40
+                            {
 
                                 \override Staff.Stem.stemlet-length = 0.75
                                 \tweak Accidental.stencil #ly:text-interface::print
@@ -259,7 +305,8 @@
                             }
 
                             \tweak text #tuplet-number::calc-fraction-text
-                            \times 14/24 {
+                            \times 14/24
+                            {
 
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-natural-markup
@@ -279,8 +326,11 @@
                             }
 
                             \tweak text #tuplet-number::calc-fraction-text
-                            \times 5/8 {
-                                % [Voice 1 measure 3]                          %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+                            \times 5/8
+                            {
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! abjad.SegmentMaker.comment_measure_numbers()
+                                % [Voice 1 measure 3]
 
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-sharp-markup
@@ -292,7 +342,8 @@
                                 fs'8
                                 ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 2 }
 
-                                \times 2/3 {
+                                \times 2/3
+                                {
 
                                     \tweak Accidental.stencil #ly:text-interface::print
                                     \tweak Accidental.text \abjad-sharp-markup
@@ -306,7 +357,8 @@
 
                                 }
 
-                                \times 2/3 {
+                                \times 2/3
+                                {
 
                                     \override Staff.Stem.stemlet-length = 0.75
                                     \tweak Accidental.stencil #ly:text-interface::print
@@ -359,7 +411,9 @@
                                 ]
 
                             }
-                            % [Voice 1 measure 4]                              %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+                            %! COMMENT_MEASURE_NUMBERS
+                            %! abjad.SegmentMaker.comment_measure_numbers()
+                            % [Voice 1 measure 4]
 
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \abjad-sharp-markup
@@ -381,7 +435,8 @@
                             as'4
                             ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 7 }
 
-                            \times 4/5 {
+                            \times 4/5
+                            {
 
                                 \override Staff.Stem.stemlet-length = 0.75
                                 \tweak Accidental.stencil #ly:text-interface::print
@@ -414,7 +469,8 @@
 
                             }
 
-                            \times 2/3 {
+                            \times 2/3
+                            {
 
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-sharp-markup
@@ -434,8 +490,11 @@
                             }
 
                             \tweak text #tuplet-number::calc-fraction-text
-                            \times 7/9 {
-                                % [Voice 1 measure 5]                          %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+                            \times 7/9
+                            {
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! abjad.SegmentMaker.comment_measure_numbers()
+                                % [Voice 1 measure 5]
 
                                 <d' ctqs'' as'' ds''' fs'''>4
                                 \f
@@ -448,7 +507,9 @@
                                 ^ \diagram-three-markup
 
                             }
-                            % [Voice 1 measure 6]                              %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+                            %! COMMENT_MEASURE_NUMBERS
+                            %! abjad.SegmentMaker.comment_measure_numbers()
+                            % [Voice 1 measure 6]
 
                             \override Staff.Stem.stemlet-length = 0.75
                             \tweak Accidental.stencil #ly:text-interface::print
@@ -490,7 +551,8 @@
                             ]
 
                             \tweak text #tuplet-number::calc-fraction-text
-                            \times 3/5 {
+                            \times 3/5
+                            {
 
                                 \override Staff.Stem.stemlet-length = 0.75
                                 \tweak Accidental.stencil #ly:text-interface::print
@@ -543,8 +605,11 @@
                             ]
 
                             \tweak text #tuplet-number::calc-fraction-text
-                            \times 7/12 {
-                                % [Voice 1 measure 7]                          %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+                            \times 7/12
+                            {
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! abjad.SegmentMaker.comment_measure_numbers()
+                                % [Voice 1 measure 7]
 
                                 \tweak Accidental.stencil #ly:text-interface::print
                                 \tweak Accidental.text \abjad-natural-markup
@@ -566,7 +631,8 @@
                                 c''4
                                 ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 7 }
 
-                                \times 4/5 {
+                                \times 4/5
+                                {
 
                                     \tweak Accidental.stencil #ly:text-interface::print
                                     \tweak Accidental.text \abjad-natural-markup
@@ -611,7 +677,9 @@
                                 ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 2 }
 
                             }
-                            % [Voice 1 measure 8]                              %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+                            %! COMMENT_MEASURE_NUMBERS
+                            %! abjad.SegmentMaker.comment_measure_numbers()
+                            % [Voice 1 measure 8]
 
                             <c'' eqf'' d''' gs'''>4.
                             \f
@@ -624,8 +692,11 @@
                             ^ \diagram-twelve-markup
                             ~
 
-                            \scaleDurations #'(1 . 1) {
-                                % [Voice 1 measure 9]                          %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+                            \scaleDurations #'(1 . 1)
+                            {
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! abjad.SegmentMaker.comment_measure_numbers()
+                                % [Voice 1 measure 9]
 
                                 <c'' eqf'' d''' gs'''>2
                                 ~
@@ -633,7 +704,9 @@
                                 <c'' eqf'' d''' gs'''>8
 
                             }
-                            % [Voice 1 measure 10]                             %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+                            %! COMMENT_MEASURE_NUMBERS
+                            %! abjad.SegmentMaker.comment_measure_numbers()
+                            % [Voice 1 measure 10]
 
                             \override Staff.Stem.stemlet-length = 0.75
                             \tweak Accidental.stencil #ly:text-interface::print
@@ -664,7 +737,8 @@
                             ^ \markup { \override #'(circle-padding . 0.25) \circle \finger 4 }
                             ]
 
-                            \times 4/5 {
+                            \times 4/5
+                            {
 
                                 \override Staff.Stem.stemlet-length = 0.75
                                 \tweak Accidental.stencil #ly:text-interface::print
@@ -697,7 +771,8 @@
 
                             }
 
-                            \times 2/3 {
+                            \times 2/3
+                            {
 
                                 \override Staff.Stem.stemlet-length = 0.75
                                 \tweak Accidental.stencil #ly:text-interface::print
@@ -719,7 +794,9 @@
                                 ]
 
                             }
-                            % [Voice 1 measure 11]                             %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+                            %! COMMENT_MEASURE_NUMBERS
+                            %! abjad.SegmentMaker.comment_measure_numbers()
+                            % [Voice 1 measure 11]
 
                             <af' bf'>4.
                             \p
@@ -728,11 +805,14 @@
                             - \tweak padding 6
                             - \tweak staff-padding 6
                             \startTextSpan
-                            \glissando                                         %! abjad.glissando(7)
+                            %! abjad.glissando(7)
+                            \glissando
 
                             <bf' af''>8
                             ~
-                            % [Voice 1 measure 12]                             %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+                            %! COMMENT_MEASURE_NUMBERS
+                            %! abjad.SegmentMaker.comment_measure_numbers()
+                            % [Voice 1 measure 12]
 
                             <bf' af''>4.
                             \bar "||"
@@ -748,3 +828,4 @@
         }
 
     >>
+%! abjad.LilyPondFile._get_formatted_blocks()

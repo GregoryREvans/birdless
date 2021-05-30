@@ -1,7 +1,6 @@
 import pathlib
 
 import abjad
-import baca
 import evans
 
 from birdless.lib import mark_108, on_beat_grace_handler_4, zero_padding_glissando
@@ -49,74 +48,74 @@ maker = evans.SegmentMaker(
         evans.call(
             "Voice 1",
             on_beat_grace_handler_4,
-            baca.leaves().get([0, 1, 2, 3, 4, 5]),
+            abjad.select().leaves().get([0, 1, 2, 3, 4, 5]),
         ),
         evans.call(
             "Staff 1",
             squeal_pitch_handler_4,
-            baca.leaves(grace=True),
+            abjad.select().leaves(grace=True),
         ),
         evans.call(
             "Staff 1",
             zero_padding_glissando,
-            baca.leaves(grace=True),
+            abjad.select().leaves(grace=True),
         ),
         evans.attach(
             "Staff 1",
             abjad.Dynamic("ppp"),
-            baca.leaf(6, grace=False),
+            abjad.select().leaf(6, grace=False),
         ),
         evans.attach(
             "Staff 1",
             abjad.StartHairpin("<"),
-            baca.leaf(6, grace=False),
+            abjad.select().leaf(6, grace=False),
         ),
         evans.attach(
             "Staff 1",
             abjad.Dynamic("mp"),
-            baca.leaf(16, grace=False),
+            abjad.select().leaf(16, grace=False),
         ),
         evans.attach(
             "Staff 1",
             start_span,
-            baca.leaf(6, grace=False),
+            abjad.select().leaf(6, grace=False),
         ),
         evans.attach(
             "Staff 1",
             abjad.StopTextSpan(),
-            baca.leaf(-2),
+            abjad.select().leaf(-2),
         ),
         evans.attach(
             "Staff 1",
             abjad.Markup(r"\teeth-on-reed-markup", literal=True, direction=abjad.Up),
-            baca.leaf(0, grace=False),
+            abjad.select().leaf(0, grace=False),
         ),
         evans.attach(
             "Staff 1",
             abjad.Markup(r"\normale-markup", literal=True, direction=abjad.Up),
-            baca.leaf(6, grace=False),
+            abjad.select().leaf(6, grace=False),
         ),
         evans.attach(
             "Staff 1",
             abjad.BendAfter(3),
-            baca.leaf(-6, grace=False, pitched=True),
+            abjad.select().leaf(-6, grace=False, pitched=True),
         ),
         evans.attach(
             "Staff 1",
             abjad.BendAfter(-2.5),
-            baca.leaf(-1, grace=False, pitched=True),
+            abjad.select().leaf(-1, grace=False, pitched=True),
         ),
         evans.attach(
             "Staff 1",
             abjad.Markup(
                 r"\markup { \raise #4 c.3'}", direction=abjad.Up, literal=True
             ),
-            baca.leaf(-1, grace=False),
+            abjad.select().leaf(-1, grace=False),
         ),
         evans.attach(
             "Global Context",
             mark_108,
-            baca.leaf(0),
+            abjad.select().leaf(0),
         ),
     ],
     score_template=score,

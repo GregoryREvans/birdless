@@ -245,3 +245,5 @@ teeth-on-reed-markup = \markup \override #'(style . "box") \override #'(box-padd
 normale-markup = \markup \override #'(style . "box") \override #'(box-padding . 0.5) \italic \box \whiteout \small "normale"
 
 sub-tone-markup = \markup \override #'(style . "box") \override #'(box-padding . 0.5) \italic \box \whiteout \small "sub tone"
+
+rit-markup = \markup \override #'(style . "box") \override #'(box-padding . 0.5) \italic \box \whiteout \small "ritardando"

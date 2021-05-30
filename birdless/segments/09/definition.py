@@ -1,7 +1,6 @@
 import pathlib
 
 import abjad
-import baca
 import evans
 
 from birdless.lib import mark_130
@@ -49,32 +48,32 @@ maker = evans.SegmentMaker(
         evans.attach(
             "Voice 1",
             abjad.StopHairpin(),
-            baca.leaf(0),
+            abjad.select().leaf(0),
         ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("p"),
-            baca.leaf(0, pitched=True),
+            abjad.select().leaf(0, pitched=True),
         ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("ff"),
-            baca.leaf(-1, pitched=True),
+            abjad.select().leaf(-1, pitched=True),
         ),
         evans.attach(
             "Staff 1",
             fermata_markup,
-            baca.leaf(-3, grace=False),
+            abjad.select().leaf(-3, grace=False),
         ),
         evans.attach(
             "Voice 1",
             abjad.Markup(r"\diagram-eight-markup", literal=True, direction=abjad.Up),
-            baca.leaf(-3),
+            abjad.select().leaf(-3),
         ),
         evans.attach(
             "Global Context",
             mark_130,
-            baca.leaf(0),
+            abjad.select().leaf(0),
         ),
     ],
     score_template=score,

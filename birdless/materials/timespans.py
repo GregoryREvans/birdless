@@ -25,6 +25,7 @@ from birdless.materials.material_patterns import (
     pitch_materials_11,
     pitch_materials_12,
     pitch_materials_13,
+    pitch_materials_14,
     rhythm_materials_01,
     rhythm_materials_02,
     rhythm_materials_03,
@@ -38,6 +39,7 @@ from birdless.materials.material_patterns import (
     rhythm_materials_11,
     rhythm_materials_12,
     rhythm_materials_13,
+    rhythm_materials_14,
 )
 from birdless.materials.time_signatures import (
     bounds_01,
@@ -53,6 +55,7 @@ from birdless.materials.time_signatures import (
     bounds_11,
     bounds_12,
     bounds_13,
+    bounds_14,
 )
 
 music_specifiers = abjad.OrderedDict(
@@ -620,6 +623,64 @@ for span in rhythm_timespans_13:
 
 evans.timespan.intercalate_silences(rhythm_commands_13)
 
+# # 14
+
+target_timespan_14 = abjad.Timespan(0, (51, 4))
+
+timespan_maker_14 = tsmakers.TaleaTimespanMaker(
+    initial_silence_talea=rmakers.Talea(counts=([0]), denominator=4),
+    playing_talea=rmakers.Talea(
+        counts=(
+            [
+                3,
+                9,
+                3,
+                4,
+                3,
+                4,
+                3,
+                4,
+                1,
+                1,
+                4,
+                3,
+                3,
+                1,
+                1,
+                3,
+                1,
+            ]
+        ),
+        denominator=4,
+    ),
+    playing_groupings=([1]),
+    silence_talea=rmakers.Talea(counts=([0]), denominator=4),
+)
+
+timespan_list_14 = timespan_maker_14(
+    music_specifiers=music_specifiers, target_timespan=target_timespan_14
+)
+
+cyc_rhythm_materials_14 = evans.CyclicList(rhythm_materials_14, forget=False)
+
+for voice in voice_names:
+    for span in timespan_list_14:
+        if span.voice_name == voice:
+            span._handler = cyc_rhythm_materials_14(r=1)[0]
+
+rhythm_timespans_14 = evans.timespan.make_split_list(timespan_list_14, bounds_14)
+
+rhythm_commands_14 = []
+for span in rhythm_timespans_14:
+    r_command = evans.RhythmCommand(
+        voice_name=span.voice_name,
+        timespan=abjad.Timespan(span.start_offset, span.stop_offset),
+        handler=span.handler,
+    )
+    rhythm_commands_14.append(r_command)
+
+evans.timespan.intercalate_silences(rhythm_commands_14)
+
 # #######
 # handlers#
 # #######
@@ -1080,6 +1141,29 @@ for span in timespan_list_13:
     else:
         pitch_commands_13.append(h_command)
 
+# # 14
+
+# # pitch
+
+cyc_pitch_materials_14 = evans.CyclicList(pitch_materials_14, forget=False)
+
+for voice in voice_names:
+    for span in timespan_list_14:
+        if span.voice_name == voice:
+            span._handler = cyc_pitch_materials_14(r=1)[0]
+
+pitch_commands_14 = []
+for span in timespan_list_14:
+    h_command = evans.HandlerCommand(
+        voice_name=span.voice_name,
+        timespan=abjad.Timespan(span.start_offset, span.stop_offset),
+        handler=span._handler,
+    )
+    if h_command.handler.name == "silence_handler":
+        continue
+    else:
+        pitch_commands_14.append(h_command)
+
 # # collected handlers
 
 handler_commands_01 = [pitch_commands_01]
@@ -1107,3 +1191,5 @@ handler_commands_11 = [pitch_commands_11, articulation_commands_11]
 handler_commands_12 = [pitch_commands_12]
 
 handler_commands_13 = [pitch_commands_13]
+
+handler_commands_14 = [pitch_commands_14]

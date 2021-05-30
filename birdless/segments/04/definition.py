@@ -1,7 +1,6 @@
 import pathlib
 
 import abjad
-import baca
 import evans
 
 from birdless.lib import hide_tuplet, mark_84
@@ -43,7 +42,7 @@ maker = evans.SegmentMaker(
         # evans.attach(
         #     "Global Context",
         #     met_108,
-        #     baca.leaf(0),
+        #     abjad.select().leaf(0),
         # ),
         evans.call(
             "Voice 1",
@@ -58,73 +57,75 @@ maker = evans.SegmentMaker(
         evans.attach(
             "Voice 1",
             abjad.Dynamic("pp"),
-            baca.leaf(0),
+            abjad.select().leaf(0),
         ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("f"),
-            baca.leaf(53),
+            abjad.select().leaf(53),
         ),
         evans.attach(
             "Voice 1",
             abjad.Markup(r"\diagram-one-markup", literal=True, direction=abjad.Up),
-            baca.leaf(53),
+            abjad.select().leaf(53),
         ),
         evans.attach(
             "Voice 1",
             abjad.Markup(r"\diagram-two-markup", literal=True, direction=abjad.Up),
-            baca.leaf(54),
+            abjad.select().leaf(54),
         ),
         evans.attach(
             "Voice 1",
             abjad.Markup(r"\diagram-three-markup", literal=True, direction=abjad.Up),
-            baca.leaf(55),
+            abjad.select().leaf(55),
         ),
         evans.attach(
             "Voice 1",
             abjad.Markup(r"\diagram-twelve-markup", literal=True, direction=abjad.Up),
-            baca.leaf(82),
+            abjad.select().leaf(82),
         ),
         evans.attach(
             "Voice 1",
             abjad.Markup(r"\diagram-twelve-markup", literal=True, direction=abjad.Up),
-            baca.leaf(83),
+            abjad.select().leaf(83),
         ),
         evans.attach(
             "Voice 1",
             abjad.Markup(r"\diagram-twelve-markup", literal=True, direction=abjad.Up),
-            baca.leaf(84),
+            abjad.select().leaf(84),
         ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("p"),
-            baca.leaf(56),
+            abjad.select().leaf(56),
         ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("f"),
-            baca.leaf(82),
+            abjad.select().leaf(82),
         ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("ff"),
-            baca.leaf(87),
+            abjad.select().leaf(87),
         ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("p"),
-            baca.leaf(99),
+            abjad.select().leaf(99),
         ),
         evans.attach(
             "Voice 1",
             start_span,
-            baca.leaf(99),
+            abjad.select().leaf(99),
         ),
-        evans.call("Voice 1", abjad.glissando, baca.leaves().get([99, 100, 101])),
+        evans.call(
+            "Voice 1", abjad.glissando, abjad.select().leaves().get([99, 100, 101])
+        ),
         evans.attach(
             "Global Context",
             mark_84,
-            baca.leaf(0),
+            abjad.select().leaf(0),
         ),
     ],
     score_template=score,

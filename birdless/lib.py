@@ -65,6 +65,20 @@ mark_120 = abjad.LilyPondLiteral(
     format_slot="after",
 )
 
+met_113 = abjad.MetronomeMark((1, 4), 113)
+met_113_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 113)
+mark_113 = abjad.LilyPondLiteral(
+    [
+        r"^ \markup {",
+        r"  \huge",
+        r"  \concat {",
+        f"      {str(met_113_mark)[8:]}",
+        r"  }",
+        r"}",
+    ],
+    format_slot="after",
+)
+
 met_108 = abjad.MetronomeMark((1, 4), 108)
 met_108_mark = abjad.MetronomeMark.make_tempo_equation_markup((1, 4), 108)
 mark_108 = abjad.LilyPondLiteral(
@@ -182,8 +196,9 @@ def zero_padding_glissando(selections):
     abjad.glissando(selections[:], zero_padding=True, allow_repeats=True)
     for run in abjad.select(selections).runs():
         leaves = abjad.select(run).leaves()
-        for leaf in leaves[1:-1]:
+        for leaf in leaves:
             abjad.tweak(leaf.note_head).Accidental.stencil = False
+        for leaf in leaves[1:-1]:
             abjad.tweak(leaf.note_head).transparent = True
             abjad.tweak(leaf.note_head).X_extent = (0, 0)
 
@@ -314,6 +329,24 @@ on_beat_grace_handler_5 = evans.OnBeatGraceHandler(
     boolean_vector=[1],
     vector_forget=False,
     name="On Beat Grace Handler 5",
+)
+
+on_beat_grace_handler_6 = evans.OnBeatGraceHandler(
+    number_of_attacks=[
+        4,
+        3,
+        4,
+    ],
+    durations=[
+        1,
+    ],
+    font_size=-4,
+    leaf_duration=(1, 100),
+    attack_number_forget=False,
+    durations_forget=False,
+    boolean_vector=[1],
+    vector_forget=False,
+    name="On Beat Grace Handler",
 )
 
 tone_to_air = evans.TextSpanHandler(

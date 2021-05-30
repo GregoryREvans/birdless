@@ -1,7 +1,6 @@
 import pathlib
 
 import abjad
-import baca
 import evans
 
 from birdless.lib import mark_60
@@ -36,7 +35,7 @@ maker = evans.SegmentMaker(
         # evans.attach(
         #     "Global Context",
         #     met_108,
-        #     baca.leaf(0),
+        #     abjad.select().leaf(0),
         # ),
         # evans.call(
         #     "Staff 1",
@@ -46,49 +45,49 @@ maker = evans.SegmentMaker(
         evans.attach(
             "Voice 1",
             abjad.Markup(r"\normale-markup", literal=True, direction=abjad.Up),
-            baca.leaf(0),
+            abjad.select().leaf(0),
         ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("sf"),
-            baca.leaf(0),
+            abjad.select().leaf(0),
         ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("sf"),
-            baca.leaf(1),
+            abjad.select().leaf(1),
         ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("sf"),
-            baca.leaf(2),
+            abjad.select().leaf(2),
         ),
         evans.attach(
             "Voice 1",
             abjad.Markup(r"\diagram-thirteen-markup", literal=True, direction=abjad.Up),
-            baca.leaf(0),
+            abjad.select().leaf(0),
         ),
         evans.attach(
             "Voice 1",
             abjad.Markup(r"\diagram-thirteen-markup", literal=True, direction=abjad.Up),
-            baca.leaf(1),
+            abjad.select().leaf(1),
         ),
         evans.attach(
             "Voice 1",
             abjad.Markup(r"\diagram-eleven-markup", literal=True, direction=abjad.Up),
-            baca.leaf(2),
+            abjad.select().leaf(2),
         ),
         evans.attach(
             "Staff 1",
             abjad.Markup(
                 r"\markup { \raise #4 c.3'}", direction=abjad.Up, literal=True
             ),
-            baca.leaf(-1, grace=False),
+            abjad.select().leaf(-1, grace=False),
         ),
         evans.attach(
             "Global Context",
             mark_60,
-            baca.leaf(0),
+            abjad.select().leaf(0),
         ),
     ],
     score_template=score,

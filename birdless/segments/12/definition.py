@@ -1,7 +1,6 @@
 import pathlib
 
 import abjad
-import baca
 import evans
 
 from birdless.lib import (
@@ -16,6 +15,13 @@ from birdless.materials.instruments import instruments
 from birdless.materials.score_structure import score
 from birdless.materials.time_signatures import signatures_12
 from birdless.materials.timespans import handler_commands_12, rhythm_commands_12
+
+# start_span = abjad.StartTextSpan(
+#     left_text=abjad.Markup(r"\rit-markup", literal=True),
+#     style="dashed-line-with-arrow",
+# )
+# abjad.tweak(start_span).padding = 3
+# abjad.tweak(start_span).staff_padding = 3
 
 maker = evans.SegmentMaker(
     instruments=instruments,
@@ -48,89 +54,104 @@ maker = evans.SegmentMaker(
         evans.call(
             "Voice 1",
             final_warble_fingerings,
-            baca.leaves().get([_ for _ in range(100)]),
+            abjad.select().leaves().get([_ for _ in range(100)]),
         ),
         evans.attach(
             "Voice 1",
             abjad.BarLine(".|:", format_slot="before"),
-            baca.leaf(0),
+            abjad.select().leaf(0),
         ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("p"),
-            baca.leaf(0),
+            abjad.select().leaf(0),
         ),
         evans.attach(
             "Voice 1",
             abjad.StartHairpin("<"),
-            baca.leaf(0),
+            abjad.select().leaf(0),
         ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("fff"),
-            baca.leaf(99),
+            abjad.select().leaf(99),
         ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("ff"),
-            baca.leaf(100),
+            abjad.select().leaf(100),
         ),
         evans.attach(
             "Voice 1",
             abjad.Markup(r"\diagram-eight-markup", literal=True, direction=abjad.Up),
-            baca.leaf(100),
+            abjad.select().leaf(100),
         ),
         evans.attach(
             "Voice 1",
             abjad.Markup(r"\diagram-eight-markup", literal=True, direction=abjad.Up),
-            baca.leaf(101),
+            abjad.select().leaf(101),
         ),
         evans.attach(
             "Voice 1",
             abjad.Markup(r"\diagram-eight-markup", literal=True, direction=abjad.Up),
-            baca.leaf(102),
+            abjad.select().leaf(102),
         ),
         evans.attach(
             "Voice 1",
             abjad.Markup(r"\diagram-eight-markup", literal=True, direction=abjad.Up),
-            baca.leaf(104),
+            abjad.select().leaf(104),
         ),
         evans.attach(
             "Voice 1",
             abjad.BarLine(":|."),
-            baca.leaf(101),
+            abjad.select().leaf(101),
         ),
         evans.attach(
             "Staff 1",
             abjad.Markup(
                 r"\markup { \raise #4 c.2'}", direction=abjad.Up, literal=True
             ),
-            baca.leaf(-1, grace=False),
+            abjad.select().leaf(-1, grace=False),
         ),
         evans.attach(
             "Global Context",
             mark_120,
-            baca.leaf(0),
+            abjad.select().leaf(0),
         ),
         evans.attach(
             "Global Context",
             met_45,
-            baca.leaf(5),
+            abjad.select().leaf(5),
         ),
         evans.attach(
             "Global Context",
             mark_45,
-            baca.leaf(5),
+            abjad.select().leaf(5),
         ),
         evans.attach(
             "Global Context",
             met_30,
-            baca.leaf(7),
+            abjad.select().leaf(7),
         ),
         evans.attach(
             "Global Context",
             mark_30,
-            baca.leaf(7),
+            abjad.select().leaf(7),
+        ),
+        # evans.attach(
+        #     "Global Context",
+        #     start_span,
+        #     abjad.select().leaf(3),
+        # ),
+        # evans.attach(
+        #     "Global Context",
+        #     abjad.StopTextSpan(),
+        #     abjad.select().leaf(5),
+        # ),
+        evans.attach(
+            "Global Context",
+            abjad.Markup(r"\rit-markup", literal=True, direction=abjad.Up),
+            abjad.select().leaf(3),
         ),
     ],
     score_template=score,

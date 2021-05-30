@@ -1,7 +1,6 @@
 import pathlib
 
 import abjad
-import baca
 import evans
 
 from birdless.lib import mark_120, on_beat_grace_handler_2, zero_padding_glissando
@@ -52,59 +51,59 @@ maker = evans.SegmentMaker(
         evans.call(
             "Staff 1",
             squeal_pitch_handler_3,
-            baca.leaves(grace=True),
+            abjad.select().leaves(grace=True),
         ),
         evans.call(
             "Staff 1",
             zero_padding_glissando,
-            baca.leaves(grace=True),
+            abjad.select().leaves(grace=True),
         ),
         evans.attach(
             "Staff 1",
             abjad.Markup(r"\teeth-on-reed-markup", literal=True, direction=abjad.Up),
-            baca.leaf(34),
+            abjad.select().leaf(34),
         ),
         evans.attach(
             "Staff 1",
             abjad.Dynamic("pp"),
-            baca.leaf(34),
+            abjad.select().leaf(34),
         ),
         evans.attach(
             "Staff 1",
             abjad.Markup(r"\normale-markup", literal=True, direction=abjad.Up),
-            baca.leaf(35),
+            abjad.select().leaf(35),
         ),
         evans.attach(
             "Staff 1",
             abjad.Markup(r"\teeth-on-reed-markup", literal=True, direction=abjad.Up),
-            baca.leaf(80),
+            abjad.select().leaf(80),
         ),
         evans.attach(
             "Staff 1",
             abjad.Dynamic("ff"),
-            baca.leaf(80),
+            abjad.select().leaf(80),
         ),
         evans.attach(
             "Staff 1",
             abjad.Dynamic("p"),
-            baca.leaf(0),
+            abjad.select().leaf(0),
         ),
         evans.attach(
             "Staff 1",
             abjad.Dynamic("mp"),
-            baca.leaf(35),
+            abjad.select().leaf(35),
         ),
         evans.attach(
             "Staff 1",
             abjad.Markup(
                 r"\markup { \raise #4 c.2'}", direction=abjad.Up, literal=True
             ),
-            baca.leaf(-1, grace=False),
+            abjad.select().leaf(-1, grace=False),
         ),
         evans.attach(
             "Global Context",
             mark_120,
-            baca.leaf(0),
+            abjad.select().leaf(0),
         ),
     ],
     score_template=score,

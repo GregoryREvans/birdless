@@ -1,21 +1,31 @@
-\version "2.19.84"                                                             %! abjad.LilyPondFile._get_format_pieces()
-\language "english"                                                            %! abjad.LilyPondFile._get_format_pieces()
+%! abjad.LilyPondFile._get_format_pieces()
+\version "2.19.84"
+%! abjad.LilyPondFile._get_format_pieces()
+\language "english"
+%! abjad.LilyPondFile._get_formatted_includes()
+\include "/Users/evansdsg2/abjad/docs/source/_stylesheets/abjad.ily"
+%! abjad.LilyPondFile._get_formatted_includes()
+\include "/Users/evansdsg2/Scores/birdless/birdless/build/score_stylesheet.ily"
 
-\include "/Users/evansdsg2/abjad/docs/source/_stylesheets/abjad.ily"           %! abjad.LilyPondFile._get_formatted_includes()
-\include "/Users/evansdsg2/Scores/birdless/birdless/build/score_stylesheet.ily" %! abjad.LilyPondFile._get_formatted_includes()
-
-\score {                                                                       %! abjad.LilyPondFile._get_formatted_blocks()
+%! abjad.LilyPondFile._get_formatted_blocks()
+\score
+%! abjad.LilyPondFile._get_formatted_blocks()
+{
 
     \context Score = "birdless Score"
     <<
 
         \context TimeSignatureContext = "Global Context"
         {
-            % [Global Context measure 1]                                       %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+            %! COMMENT_MEASURE_NUMBERS
+            %! abjad.SegmentMaker.comment_measure_numbers()
+            % [Global Context measure 1]
 
             \tempo 4=130
-            #(ly:expect-warning "strange time signature found")                %! scaling time signatures
-            \time 5/6                                                          %! scaling time signatures
+            %! scaling time signatures
+            #(ly:expect-warning "strange time signature found")
+            %! scaling time signatures
+            \time 5/6
             \mark \markup \bold {  }
             s1 * 5/6
             ^ \markup {
@@ -24,29 +34,48 @@
                   \abjad-metronome-mark-markup #2 #0 #1 #"130"
               }
             }
-            % [Global Context measure 2]                                       %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+            %! COMMENT_MEASURE_NUMBERS
+            %! abjad.SegmentMaker.comment_measure_numbers()
+            % [Global Context measure 2]
 
-            #(ly:expect-warning "strange time signature found")                %! scaling time signatures
-            \time 4/6                                                          %! scaling time signatures
+            %! scaling time signatures
+            #(ly:expect-warning "strange time signature found")
+            %! scaling time signatures
+            \time 4/6
             s1 * 2/3
-            % [Global Context measure 3]                                       %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+            %! COMMENT_MEASURE_NUMBERS
+            %! abjad.SegmentMaker.comment_measure_numbers()
+            % [Global Context measure 3]
 
-            #(ly:expect-warning "strange time signature found")                %! scaling time signatures
-            \time 3/6                                                          %! scaling time signatures
+            %! scaling time signatures
+            #(ly:expect-warning "strange time signature found")
+            %! scaling time signatures
+            \time 3/6
             s1 * 1/2
-            % [Global Context measure 4]                                       %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+            %! COMMENT_MEASURE_NUMBERS
+            %! abjad.SegmentMaker.comment_measure_numbers()
+            % [Global Context measure 4]
 
-            #(ly:expect-warning "strange time signature found")                %! scaling time signatures
-            \time 4/6                                                          %! scaling time signatures
+            %! scaling time signatures
+            #(ly:expect-warning "strange time signature found")
+            %! scaling time signatures
+            \time 4/6
             s1 * 2/3
-            % [Global Context measure 5]                                       %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+            %! COMMENT_MEASURE_NUMBERS
+            %! abjad.SegmentMaker.comment_measure_numbers()
+            % [Global Context measure 5]
 
-            #(ly:expect-warning "strange time signature found")                %! scaling time signatures
-            \time 5/6                                                          %! scaling time signatures
+            %! scaling time signatures
+            #(ly:expect-warning "strange time signature found")
+            %! scaling time signatures
+            \time 5/6
             s1 * 5/6
-            % [Global Context measure 6]                                       %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+            %! COMMENT_MEASURE_NUMBERS
+            %! abjad.SegmentMaker.comment_measure_numbers()
+            % [Global Context measure 6]
 
-            \time 6/8                                                          %! scaling time signatures
+            %! scaling time signatures
+            \time 6/8
             s1 * 3/4
 
         }
@@ -67,13 +96,20 @@
                         {
 
                             \tweak edge-height #'(0.7 . 0)
-                            \times 2/3 {
-                                % [Voice 1 measure 1]                          %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+                            \times 2/3
+                            {
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! abjad.SegmentMaker.comment_measure_numbers()
+                                % [Voice 1 measure 1]
 
-                                \set Staff.shortInstrumentName =               %! applying staff names and clefs
-                                \markup { \hcenter-in #12 " " }                %! applying staff names and clefs
-                                \set Staff.instrumentName =                    %! applying staff names and clefs
-                                \markup { \hcenter-in #14 "Alto Saxophone" }   %! applying staff names and clefs
+                                %! applying staff names and clefs
+                                \set Staff.shortInstrumentName =
+                                %! applying staff names and clefs
+                                \markup { \hcenter-in #12 " " }
+                                %! applying staff names and clefs
+                                \set Staff.instrumentName =
+                                %! applying staff names and clefs
+                                \markup { \hcenter-in #14 "Alto Saxophone" }
                                 r8
                                 \!
 
@@ -96,8 +132,11 @@
                             }
 
                             \tweak edge-height #'(0.7 . 0)
-                            \times 2/3 {
-                                % [Voice 1 measure 2]                          %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+                            \times 2/3
+                            {
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! abjad.SegmentMaker.comment_measure_numbers()
+                                % [Voice 1 measure 2]
 
                                 r2
 
@@ -118,8 +157,11 @@
 
                             }
 
-                            \times 2/3 {
-                                % [Voice 1 measure 3]                          %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+                            \times 2/3
+                            {
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! abjad.SegmentMaker.comment_measure_numbers()
+                                % [Voice 1 measure 3]
 
                                 \override Staff.Stem.stemlet-length = 0.75
                                 fs''8
@@ -144,8 +186,11 @@
                             }
 
                             \tweak edge-height #'(0.7 . 0)
-                            \times 2/3 {
-                                % [Voice 1 measure 4]                          %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+                            \times 2/3
+                            {
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! abjad.SegmentMaker.comment_measure_numbers()
+                                % [Voice 1 measure 4]
 
                                 \override Staff.Stem.stemlet-length = 0.75
                                 a''8
@@ -170,8 +215,11 @@
                             }
 
                             \tweak edge-height #'(0.7 . 0)
-                            \times 2/3 {
-                                % [Voice 1 measure 5]                          %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+                            \times 2/3
+                            {
+                                %! COMMENT_MEASURE_NUMBERS
+                                %! abjad.SegmentMaker.comment_measure_numbers()
+                                % [Voice 1 measure 5]
 
                                 r4
 
@@ -193,7 +241,9 @@
                                 - \snappizzicato
 
                             }
-                            % [Voice 1 measure 6]                              %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+                            %! COMMENT_MEASURE_NUMBERS
+                            %! abjad.SegmentMaker.comment_measure_numbers()
+                            % [Voice 1 measure 6]
 
                             <fs' g'' ctqs''' fs'''>2.
                             \ff
@@ -213,4 +263,5 @@
         }
 
     >>
-}                                                                              %! abjad.LilyPondFile._get_formatted_blocks()
+%! abjad.LilyPondFile._get_formatted_blocks()
+}

@@ -1,20 +1,29 @@
-\version "2.19.84"                                                             %! abjad.LilyPondFile._get_format_pieces()
-\language "english"                                                            %! abjad.LilyPondFile._get_format_pieces()
+%! abjad.LilyPondFile._get_format_pieces()
+\version "2.19.84"
+%! abjad.LilyPondFile._get_format_pieces()
+\language "english"
+%! abjad.LilyPondFile._get_formatted_includes()
+\include "/Users/evansdsg2/abjad/docs/source/_stylesheets/abjad.ily"
+%! abjad.LilyPondFile._get_formatted_includes()
+\include "/Users/evansdsg2/Scores/birdless/birdless/build/score_stylesheet.ily"
 
-\include "/Users/evansdsg2/abjad/docs/source/_stylesheets/abjad.ily"           %! abjad.LilyPondFile._get_formatted_includes()
-\include "/Users/evansdsg2/Scores/birdless/birdless/build/score_stylesheet.ily" %! abjad.LilyPondFile._get_formatted_includes()
-
-\score {                                                                       %! abjad.LilyPondFile._get_formatted_blocks()
+%! abjad.LilyPondFile._get_formatted_blocks()
+\score
+%! abjad.LilyPondFile._get_formatted_blocks()
+{
 
     \context Score = "birdless Score"
     <<
 
         \context TimeSignatureContext = "Global Context"
         {
-            % [Global Context measure 1]                                       %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+            %! COMMENT_MEASURE_NUMBERS
+            %! abjad.SegmentMaker.comment_measure_numbers()
+            % [Global Context measure 1]
 
             \tempo 4=60
-            \time 7/8                                                          %! scaling time signatures
+            %! scaling time signatures
+            \time 7/8
             \mark \markup \bold {  }
             s1 * 7/8
             ^ \markup {
@@ -23,18 +32,28 @@
                   \abjad-metronome-mark-markup #2 #0 #1 #"60"
               }
             }
-            % [Global Context measure 2]                                       %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+            %! COMMENT_MEASURE_NUMBERS
+            %! abjad.SegmentMaker.comment_measure_numbers()
+            % [Global Context measure 2]
 
-            \time 6/8                                                          %! scaling time signatures
+            %! scaling time signatures
+            \time 6/8
             s1 * 3/4
-            % [Global Context measure 3]                                       %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+            %! COMMENT_MEASURE_NUMBERS
+            %! abjad.SegmentMaker.comment_measure_numbers()
+            % [Global Context measure 3]
 
-            \time 5/8                                                          %! scaling time signatures
+            %! scaling time signatures
+            \time 5/8
             s1 * 5/8
-            % [Global Context measure 4]                                       %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+            %! COMMENT_MEASURE_NUMBERS
+            %! abjad.SegmentMaker.comment_measure_numbers()
+            % [Global Context measure 4]
 
-            \once \override Score.TimeSignature.stencil = ##f                  %! applying ending skips
-            \time 3/16                                                         %! scaling time signatures
+            %! applying ending skips
+            \once \override Score.TimeSignature.stencil = ##f
+            %! scaling time signatures
+            \time 3/16
             s1 * 3/16
 
         }
@@ -53,22 +72,32 @@
 
                         \context Voice = "Voice 1"
                         {
-                            % [Voice 1 measure 1]                              %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+                            %! COMMENT_MEASURE_NUMBERS
+                            %! abjad.SegmentMaker.comment_measure_numbers()
+                            % [Voice 1 measure 1]
 
-                            \set Staff.shortInstrumentName =                   %! applying staff names and clefs
-                            \markup { \hcenter-in #12 " " }                    %! applying staff names and clefs
-                            \set Staff.instrumentName =                        %! applying staff names and clefs
-                            \markup { \hcenter-in #14 "Alto Saxophone" }       %! applying staff names and clefs
+                            %! applying staff names and clefs
+                            \set Staff.shortInstrumentName =
+                            %! applying staff names and clefs
+                            \markup { \hcenter-in #12 " " }
+                            %! applying staff names and clefs
+                            \set Staff.instrumentName =
+                            %! applying staff names and clefs
+                            \markup { \hcenter-in #14 "Alto Saxophone" }
                             <cqs'' g'' e''' bf'''>2..
                             \sf
                             ^ \normale-markup
                             ^ \diagram-thirteen-markup
-                            % [Voice 1 measure 2]                              %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+                            %! COMMENT_MEASURE_NUMBERS
+                            %! abjad.SegmentMaker.comment_measure_numbers()
+                            % [Voice 1 measure 2]
 
                             <cqs'' g'' e''' bf'''>2.
                             \sf
                             ^ \diagram-thirteen-markup
-                            % [Voice 1 measure 3]                              %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+                            %! COMMENT_MEASURE_NUMBERS
+                            %! abjad.SegmentMaker.comment_measure_numbers()
+                            % [Voice 1 measure 3]
 
                             <gtqs' bqf'' f'''>4.
                             \sf
@@ -77,17 +106,24 @@
 
                             <gtqs' bqf'' f'''>4
                             \bar "||"
-                            % [Voice 1 measure 4]                              %! COMMENT_MEASURE_NUMBERS:abjad.SegmentMaker.comment_measure_numbers()
+                            %! COMMENT_MEASURE_NUMBERS
+                            %! abjad.SegmentMaker.comment_measure_numbers()
+                            % [Voice 1 measure 4]
 
-                            \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff %! applying ending skips
-                            \once \override Rest.color = #white                %! applying ending skips
+                            %! applying ending skips
+                            \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
+                            %! applying ending skips
+                            \once \override Rest.color = #white
                             r1 * 3/32
 
-                            \once \override MultiMeasureRest.color = #white    %! applying ending skips
+                            %! applying ending skips
+                            \once \override MultiMeasureRest.color = #white
                             R1 * 3/32
-                            ^ \markup \center-align \musicglyph #"scripts.ushortfermata" %! applying ending skips
+                            %! applying ending skips
+                            ^ \markup \center-align \musicglyph #"scripts.ushortfermata" 
                             ^ \markup { \raise #4 c.3'}
-                            \stopStaff \startStaff                             %! applying ending skips
+                            %! applying ending skips
+                            \stopStaff \startStaff
 
                         }
 
@@ -100,4 +136,5 @@
         }
 
     >>
-}                                                                              %! abjad.LilyPondFile._get_formatted_blocks()
+%! abjad.LilyPondFile._get_formatted_blocks()
+}

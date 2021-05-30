@@ -14,6 +14,7 @@ from birdless.materials.pitch import (
     slap_pitch_handler,
     split_fundamental_handler,
     teeth_pitch_handler,
+    tender_mult,
     wailing_pitch_handler,
     warble_pitch_handler,
 )
@@ -876,4 +877,46 @@ final_wailing = evans.PitchHandler(
 
 pitch_materials_13 = [
     final_wailing,
+]
+
+## 14
+
+rhythm_materials_14 = [
+    note_rhythm_handler,
+    note_rhythm_handler,
+    silence_handler,
+    note_rhythm_handler,
+    silence_handler,
+    note_rhythm_handler,
+    silence_handler,
+    note_rhythm_handler,
+    note_rhythm_handler,
+    silence_handler,
+    note_rhythm_handler,
+    silence_handler,
+    note_rhythm_handler,
+    silence_handler,
+    note_rhythm_handler,
+    silence_handler,
+    note_rhythm_handler,
+]
+
+pitch_materials_14 = [
+    tender_mult,
+    tender_mult,
+    silence_handler,
+    tender_mult,
+    silence_handler,
+    tender_mult,
+    silence_handler,
+    tender_mult,
+    silence_handler,
+    silence_handler,
+    tender_mult,
+    silence_handler,
+    tender_mult,
+    silence_handler,
+    silence_handler,
+    silence_handler,
+    silence_handler,
 ]
