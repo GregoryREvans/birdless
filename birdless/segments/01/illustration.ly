@@ -1,5 +1,5 @@
 %! abjad.LilyPondFile._get_format_pieces()
-\version "2.19.84"
+\version "2.23.2"
 %! abjad.LilyPondFile._get_format_pieces()
 \language "english"
 %! abjad.LilyPondFile._get_formatted_includes()
@@ -103,7 +103,7 @@
                                     \slash
                                     \voiceOne
                                     \tweak Accidental.stencil ##f
-                                    c'''8
+                                    c'''8 * 1/2
                                     [
                                     (
                                     %! abjad.glissando(7)
@@ -141,7 +141,7 @@
                                     \tweak Accidental.stencil ##f
                                     \tweak X-extent #'(0 . 0)
                                     \tweak transparent ##t
-                                    c'''8
+                                    c'''8 * 1/2
                                     %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
                                     %! abjad.glissando(7)
@@ -159,7 +159,7 @@
                                     \tweak Accidental.stencil ##f
                                     \tweak X-extent #'(0 . 0)
                                     \tweak transparent ##t
-                                    d'''8
+                                    d'''8 * 1/2
                                     %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
                                     %! abjad.glissando(7)
@@ -213,7 +213,7 @@
                                     \slash
                                     \voiceOne
                                     \tweak Accidental.stencil ##f
-                                    cs'''8
+                                    cs'''8 * 1/2
                                     [
                                     (
                                     %! abjad.glissando(7)
@@ -256,7 +256,7 @@
                                     \tweak Accidental.stencil ##f
                                     \tweak X-extent #'(0 . 0)
                                     \tweak transparent ##t
-                                    cs'''8
+                                    cs'''8 * 1/2
                                     %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
                                     %! abjad.glissando(7)
@@ -274,7 +274,7 @@
                                     \tweak Accidental.stencil ##f
                                     \tweak X-extent #'(0 . 0)
                                     \tweak transparent ##t
-                                    ef'''8
+                                    ef'''8 * 1/2
                                     \stopTextSpanOne
                                     %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
@@ -369,7 +369,7 @@
                                     \tweak Accidental.stencil ##f
                                     \tweak X-extent #'(0 . 0)
                                     \tweak transparent ##t
-                                    d'''8
+                                    d'''8 * 1/2
                                     %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
                                     %! abjad.glissando(7)
@@ -405,7 +405,7 @@
                                     \tweak Accidental.stencil ##f
                                     \tweak X-extent #'(0 . 0)
                                     \tweak transparent ##t
-                                    d'''8
+                                    d'''8 * 1/2
                                     %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
                                     %! abjad.glissando(7)
@@ -423,7 +423,7 @@
                                     \tweak Accidental.stencil ##f
                                     \tweak X-extent #'(0 . 0)
                                     \tweak transparent ##t
-                                    d'''8
+                                    d'''8 * 1/2
                                     %! abjad.glissando(7)
                                     - \abjad-zero-padding-glissando
                                     %! abjad.glissando(7)
@@ -458,11 +458,11 @@
                             %! applying ending skips
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #0 \startStaff
                             %! applying ending skips
-                            \once \override Rest.color = #white
+                            \once \override Rest.transparent = ##t
                             r1 * 3/32
 
                             %! applying ending skips
-                            \once \override MultiMeasureRest.color = #white
+                            \once \override MultiMeasureRest.transparent = ##t
                             R1 * 3/32
                             %! applying ending skips
                             ^ \markup \center-align \musicglyph #"scripts.ushortfermata" 
