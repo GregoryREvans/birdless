@@ -1,9 +1,9 @@
 import abjad
-handler_to_value = abjad.OrderedDict(
+handler_to_value = dict(
     [
         (
             'slap_pitch_handler',
-            abjad.OrderedDict(
+            dict(
                 [
                     ('pitch_count', 36),
                     ('chord_boolean_count', -1),
@@ -13,7 +13,7 @@ handler_to_value = abjad.OrderedDict(
             ),
         (
             'wailing handler',
-            abjad.OrderedDict(
+            dict(
                 [
                     ('pitch_count', 0),
                     ('chord_boolean_count', -1),
@@ -23,7 +23,7 @@ handler_to_value = abjad.OrderedDict(
             ),
         (
             'snap pizz',
-            abjad.OrderedDict(
+            dict(
                 [
                     ('count', 16),
                     ('vector_count', 16),

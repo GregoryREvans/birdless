@@ -1,9 +1,9 @@
 import abjad
-handler_to_value = abjad.OrderedDict(
+handler_to_value = dict(
     [
         (
             'Pitch Handler',
-            abjad.OrderedDict(
+            dict(
                 [
                     ('pitch_count', 48),
                     ('chord_boolean_count', -1),
@@ -13,7 +13,7 @@ handler_to_value = abjad.OrderedDict(
             ),
         (
             'flourish_pitch_handler',
-            abjad.OrderedDict(
+            dict(
                 [
                     ('pitch_count', 15),
                     ('chord_boolean_count', -1),
@@ -23,7 +23,7 @@ handler_to_value = abjad.OrderedDict(
             ),
         (
             'squeal dynamics',
-            abjad.OrderedDict(
+            dict(
                 [
                     ('count_1', 1),
                     ('count_2', 0),

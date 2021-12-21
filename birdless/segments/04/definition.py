@@ -10,7 +10,7 @@ from birdless.materials.time_signatures import signatures_04
 from birdless.materials.timespans import handler_commands_04, rhythm_commands_04
 
 start_span = abjad.StartTextSpan(
-    left_text=abjad.Markup(r"\diagram-nine-span-markup", literal=True),
+    left_text=abjad.Markup(r"\diagram-nine-span-markup"),
     style="solid-line-with-hook",
 )
 abjad.tweak(start_span).padding = 6
@@ -30,102 +30,104 @@ maker = evans.SegmentMaker(
         evans.call(
             "score",
             evans.SegmentMaker.rewrite_meter,
-            abjad.select().components(abjad.Score),
+            lambda _: abjad.Selection(_).components(abjad.Score),
         ),
         "skips",
         handler_commands_04,
         evans.call(
             "score",
             evans.SegmentMaker.beam_score,
-            abjad.select().components(abjad.Score),
+            lambda _: abjad.Selection(_).components(abjad.Score),
         ),
         # evans.attach(
         #     "Global Context",
         #     met_108,
-        #     abjad.select().leaf(0),
+        #     lambda _: abjad.Selection(_).leaf(0),
         # ),
         evans.call(
             "Voice 1",
             hide_tuplet,
-            abjad.select(),
+            lambda _: abjad.Selection(_),
         ),
         # evans.call(
         #     "Staff 1",
         #     evans.annotate_leaves,
-        #     abjad.select(),
+        #     lambda _: abjad.Selection(_),
         # ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("pp"),
-            abjad.select().leaf(0),
+            lambda _: abjad.Selection(_).leaf(0),
         ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("f"),
-            abjad.select().leaf(53),
+            lambda _: abjad.Selection(_).leaf(53),
         ),
         evans.attach(
             "Voice 1",
-            abjad.Markup(r"\diagram-one-markup", literal=True, direction=abjad.Up),
-            abjad.select().leaf(53),
+            abjad.Markup(r"\diagram-one-markup", direction=abjad.Up),
+            lambda _: abjad.Selection(_).leaf(53),
         ),
         evans.attach(
             "Voice 1",
-            abjad.Markup(r"\diagram-two-markup", literal=True, direction=abjad.Up),
-            abjad.select().leaf(54),
+            abjad.Markup(r"\diagram-two-markup", direction=abjad.Up),
+            lambda _: abjad.Selection(_).leaf(54),
         ),
         evans.attach(
             "Voice 1",
-            abjad.Markup(r"\diagram-three-markup", literal=True, direction=abjad.Up),
-            abjad.select().leaf(55),
+            abjad.Markup(r"\diagram-three-markup", direction=abjad.Up),
+            lambda _: abjad.Selection(_).leaf(55),
         ),
         evans.attach(
             "Voice 1",
-            abjad.Markup(r"\diagram-twelve-markup", literal=True, direction=abjad.Up),
-            abjad.select().leaf(82),
+            abjad.Markup(r"\diagram-twelve-markup", direction=abjad.Up),
+            lambda _: abjad.Selection(_).leaf(82),
         ),
         evans.attach(
             "Voice 1",
-            abjad.Markup(r"\diagram-twelve-markup", literal=True, direction=abjad.Up),
-            abjad.select().leaf(83),
+            abjad.Markup(r"\diagram-twelve-markup", direction=abjad.Up),
+            lambda _: abjad.Selection(_).leaf(83),
         ),
         evans.attach(
             "Voice 1",
-            abjad.Markup(r"\diagram-twelve-markup", literal=True, direction=abjad.Up),
-            abjad.select().leaf(84),
+            abjad.Markup(r"\diagram-twelve-markup", direction=abjad.Up),
+            lambda _: abjad.Selection(_).leaf(84),
         ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("p"),
-            abjad.select().leaf(56),
+            lambda _: abjad.Selection(_).leaf(56),
         ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("f"),
-            abjad.select().leaf(82),
+            lambda _: abjad.Selection(_).leaf(82),
         ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("ff"),
-            abjad.select().leaf(87),
+            lambda _: abjad.Selection(_).leaf(87),
         ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("p"),
-            abjad.select().leaf(99),
+            lambda _: abjad.Selection(_).leaf(99),
         ),
         evans.attach(
             "Voice 1",
             start_span,
-            abjad.select().leaf(99),
+            lambda _: abjad.Selection(_).leaf(99),
         ),
         evans.call(
-            "Voice 1", abjad.glissando, abjad.select().leaves().get([99, 100, 101])
+            "Voice 1",
+            abjad.glissando,
+            lambda _: abjad.Selection(_).leaves().get([99, 100, 101]),
         ),
         evans.attach(
             "Global Context",
             mark_84,
-            abjad.select().leaf(0),
+            lambda _: abjad.Selection(_).leaf(0),
         ),
     ],
     score_template=score,

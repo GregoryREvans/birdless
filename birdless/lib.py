@@ -21,8 +21,8 @@ class WarbleFingerings(evans.handlers.Handler):
         self.name = name
 
     def __call__(self, selections):
-        for tie in abjad.select(selections).logical_ties(pitched=True):
-            first_leaf = abjad.select(tie).leaf(0)
+        for tie in abjad.Selection(selections).logical_ties(pitched=True):
+            first_leaf = abjad.Selection(tie).leaf(0)
             symbol = self._cyc_fingerings(r=1)[0]
             abjad.attach(symbol, first_leaf)
 
@@ -30,7 +30,7 @@ class WarbleFingerings(evans.handlers.Handler):
         return self.name
 
     def state(self):
-        return abjad.OrderedDict(
+        return dict(
             [
                 ("state", "No State Preservation Enabled!"),
             ]
@@ -194,8 +194,8 @@ mark_30 = abjad.LilyPondLiteral(
 
 def zero_padding_glissando(selections):
     abjad.glissando(selections[:], zero_padding=True, allow_repeats=True)
-    for run in abjad.select(selections).runs():
-        leaves = abjad.select(run).leaves()
+    for run in abjad.Selection(selections).runs():
+        leaves = abjad.Selection(run).leaves()
         for leaf in leaves:
             abjad.tweak(leaf.note_head).Accidental.stencil = False
         for leaf in leaves[1:-1]:
@@ -364,7 +364,7 @@ flutter_tongue = evans.ArticulationHandler(
 
 
 def hide_tuplet(selections):
-    for tuplet in abjad.select(selections).components(abjad.Tuplet):
+    for tuplet in abjad.Selection(selections).components(abjad.Tuplet):
         if tuplet.multiplier == abjad.Multiplier(1, 1):
             tuplet.hide = True
 

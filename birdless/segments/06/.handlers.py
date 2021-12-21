@@ -1,9 +1,9 @@
 import abjad
-handler_to_value = abjad.OrderedDict(
+handler_to_value = dict(
     [
         (
             'warble_pitch_handler',
-            abjad.OrderedDict(
+            dict(
                 [
                     ('pitch_count', 71),
                     ('chord_boolean_count', -1),
@@ -13,7 +13,7 @@ handler_to_value = abjad.OrderedDict(
             ),
         (
             'Pitch Handler',
-            abjad.OrderedDict(
+            dict(
                 [
                     ('pitch_count', 6),
                     ('chord_boolean_count', -1),
@@ -23,7 +23,7 @@ handler_to_value = abjad.OrderedDict(
             ),
         (
             'Warble Fingerings',
-            abjad.OrderedDict(
+            dict(
                 [
                     ('state', 'No State Preservation Enabled!'),
                     ]

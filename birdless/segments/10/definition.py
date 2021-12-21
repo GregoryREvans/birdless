@@ -11,7 +11,7 @@ from birdless.materials.time_signatures import signatures_10
 from birdless.materials.timespans import handler_commands_10, rhythm_commands_10
 
 start_span = abjad.StartTextSpan(
-    left_text=abjad.Markup(r"\sub-tone-markup", literal=True),
+    left_text=abjad.Markup(r"\sub-tone-markup"),
     style="solid-line-with-hook",
 )
 abjad.tweak(start_span).padding = 5
@@ -31,91 +31,89 @@ maker = evans.SegmentMaker(
         evans.call(
             "score",
             evans.SegmentMaker.rewrite_meter,
-            abjad.select().components(abjad.Score),
+            lambda _: abjad.Selection(_).components(abjad.Score),
         ),
         "skips",
         handler_commands_10,
         evans.call(
             "score",
             evans.SegmentMaker.beam_score,
-            abjad.select().components(abjad.Score),
+            lambda _: abjad.Selection(_).components(abjad.Score),
         ),
         # evans.call(
         #     "Staff 1",
         #     evans.annotate_leaves,
-        #     abjad.select(),
+        #     lambda _: abjad.Selection(_),
         # ),
         evans.call(
             "Voice 1",
             on_beat_grace_handler_4,
-            abjad.select().leaves().get([0, 1, 2, 3, 4, 5]),
+            lambda _: abjad.Selection(_).leaves().get([0, 1, 2, 3, 4, 5]),
         ),
         evans.call(
             "Staff 1",
             squeal_pitch_handler_4,
-            abjad.select().leaves(grace=True),
+            lambda _: abjad.Selection(_).leaves(grace=True),
         ),
         evans.call(
             "Staff 1",
             zero_padding_glissando,
-            abjad.select().leaves(grace=True),
+            lambda _: abjad.Selection(_).leaves(grace=True),
         ),
         evans.attach(
             "Staff 1",
             abjad.Dynamic("ppp"),
-            abjad.select().leaf(6, grace=False),
+            lambda _: abjad.Selection(_).leaf(6, grace=False),
         ),
         evans.attach(
             "Staff 1",
             abjad.StartHairpin("<"),
-            abjad.select().leaf(6, grace=False),
+            lambda _: abjad.Selection(_).leaf(6, grace=False),
         ),
         evans.attach(
             "Staff 1",
             abjad.Dynamic("mp"),
-            abjad.select().leaf(16, grace=False),
+            lambda _: abjad.Selection(_).leaf(16, grace=False),
         ),
         evans.attach(
             "Staff 1",
             start_span,
-            abjad.select().leaf(6, grace=False),
+            lambda _: abjad.Selection(_).leaf(6, grace=False),
         ),
         evans.attach(
             "Staff 1",
             abjad.StopTextSpan(),
-            abjad.select().leaf(-2),
+            lambda _: abjad.Selection(_).leaf(-2),
         ),
         evans.attach(
             "Staff 1",
-            abjad.Markup(r"\teeth-on-reed-markup", literal=True, direction=abjad.Up),
-            abjad.select().leaf(0, grace=False),
+            abjad.Markup(r"\teeth-on-reed-markup", direction=abjad.Up),
+            lambda _: abjad.Selection(_).leaf(0, grace=False),
         ),
         evans.attach(
             "Staff 1",
-            abjad.Markup(r"\normale-markup", literal=True, direction=abjad.Up),
-            abjad.select().leaf(6, grace=False),
+            abjad.Markup(r"\normale-markup", direction=abjad.Up),
+            lambda _: abjad.Selection(_).leaf(6, grace=False),
         ),
         evans.attach(
             "Staff 1",
             abjad.BendAfter(3),
-            abjad.select().leaf(-6, grace=False, pitched=True),
+            lambda _: abjad.Selection(_).leaf(-6, grace=False, pitched=True),
         ),
         evans.attach(
             "Staff 1",
             abjad.BendAfter(-2.5),
-            abjad.select().leaf(-1, grace=False, pitched=True),
+            lambda _: abjad.Selection(_).leaf(-1, grace=False, pitched=True),
         ),
         evans.attach(
             "Staff 1",
-            abjad.Markup(
-                r"\markup { \raise #4 c.3'}", direction=abjad.Up, literal=True
-            ),
-            abjad.select().leaf(-1, grace=False),
+            abjad.Markup(r"\markup { \raise #4 c.3'}", direction=abjad.Up),
+            lambda _: abjad.Selection(_).leaf(-1, grace=False),
         ),
         evans.attach(
             "Global Context",
             mark_108,
-            abjad.select().leaf(0),
+            lambda _: abjad.Selection(_).leaf(0),
         ),
     ],
     score_template=score,

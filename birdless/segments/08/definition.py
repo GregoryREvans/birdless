@@ -24,36 +24,34 @@ maker = evans.SegmentMaker(
         evans.call(
             "score",
             evans.SegmentMaker.rewrite_meter,
-            abjad.select().components(abjad.Score),
+            lambda _: abjad.Selection(_).components(abjad.Score),
         ),
         "skips",
         handler_commands_08,
         evans.call(
             "score",
             evans.SegmentMaker.beam_score,
-            abjad.select().components(abjad.Score),
+            lambda _: abjad.Selection(_).components(abjad.Score),
         ),
         # evans.call(
         #     "Staff 1",
         #     evans.annotate_leaves,
-        #     abjad.select(),
+        #     lambda _: abjad.Selection(_),
         # ),
         evans.call(
             "Voice 1",
             apply_octave_up,
-            abjad.select(),
+            lambda _: abjad.Selection(_),
         ),
         evans.attach(
             "Staff 1",
-            abjad.Markup(
-                r"\markup { \raise #4 c.5'}", direction=abjad.Up, literal=True
-            ),
-            abjad.select().leaf(-1, grace=False),
+            abjad.Markup(r"\markup { \raise #4 c.5'}", direction=abjad.Up),
+            lambda _: abjad.Selection(_).leaf(-1, grace=False),
         ),
         evans.attach(
             "Global Context",
             mark_90,
-            abjad.select().leaf(0),
+            lambda _: abjad.Selection(_).leaf(0),
         ),
     ],
     score_template=score,

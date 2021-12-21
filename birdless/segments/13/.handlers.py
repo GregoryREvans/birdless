@@ -1,9 +1,9 @@
 import abjad
-handler_to_value = abjad.OrderedDict(
+handler_to_value = dict(
     [
         (
             'wailing',
-            abjad.OrderedDict(
+            dict(
                 [
                     ('pitch_count', 1),
                     ('chord_boolean_count', -1),

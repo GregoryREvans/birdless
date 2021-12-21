@@ -58,9 +58,7 @@ from birdless.materials.time_signatures import (
     bounds_14,
 )
 
-music_specifiers = abjad.OrderedDict(
-    [(f"Voice {i+1}", None) for i, name in enumerate(instruments)]
-)
+music_specifiers = dict([(f"Voice {i+1}", None) for i, name in enumerate(instruments)])
 
 voice_names = [specifier for specifier in music_specifiers]
 

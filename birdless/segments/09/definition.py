@@ -12,7 +12,6 @@ from birdless.materials.timespans import handler_commands_09, rhythm_commands_09
 fermata_markup = abjad.Markup(
     r"""\markup { \center-column{\raise #-1 c.6' \musicglyph #"scripts.ulongfermata"} }""",
     direction=abjad.Up,
-    literal=True,
 )
 
 abjad.tweak(fermata_markup).X_offset = -0.5
@@ -31,49 +30,49 @@ maker = evans.SegmentMaker(
         evans.call(
             "score",
             evans.SegmentMaker.rewrite_meter,
-            abjad.select().components(abjad.Score),
+            lambda _: abjad.Selection(_).components(abjad.Score),
         ),
         "skips",
         handler_commands_09,
         evans.call(
             "score",
             evans.SegmentMaker.beam_score,
-            abjad.select().components(abjad.Score),
+            lambda _: abjad.Selection(_).components(abjad.Score),
         ),
         # evans.call(
         #     "Staff 1",
         #     evans.annotate_leaves,
-        #     abjad.select(),
+        #     lambda _: abjad.Selection(_),
         # ),
         evans.attach(
             "Voice 1",
             abjad.StopHairpin(),
-            abjad.select().leaf(0),
+            lambda _: abjad.Selection(_).leaf(0),
         ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("p"),
-            abjad.select().leaf(0, pitched=True),
+            lambda _: abjad.Selection(_).leaf(0, pitched=True),
         ),
         evans.attach(
             "Voice 1",
             abjad.Dynamic("ff"),
-            abjad.select().leaf(-1, pitched=True),
+            lambda _: abjad.Selection(_).leaf(-1, pitched=True),
         ),
         evans.attach(
             "Staff 1",
             fermata_markup,
-            abjad.select().leaf(-3, grace=False),
+            lambda _: abjad.Selection(_).leaf(-3, grace=False),
         ),
         evans.attach(
             "Voice 1",
-            abjad.Markup(r"\diagram-eight-markup", literal=True, direction=abjad.Up),
-            abjad.select().leaf(-3),
+            abjad.Markup(r"\diagram-eight-markup", direction=abjad.Up),
+            lambda _: abjad.Selection(_).leaf(-3),
         ),
         evans.attach(
             "Global Context",
             mark_130,
-            abjad.select().leaf(0),
+            lambda _: abjad.Selection(_).leaf(0),
         ),
     ],
     score_template=score,

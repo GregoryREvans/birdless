@@ -1,9 +1,9 @@
 import abjad
-handler_to_value = abjad.OrderedDict(
+handler_to_value = dict(
     [
         (
             'warble_pitch_handler',
-            abjad.OrderedDict(
+            dict(
                 [
                     ('pitch_count', 143),
                     ('chord_boolean_count', -1),
@@ -13,7 +13,7 @@ handler_to_value = abjad.OrderedDict(
             ),
         (
             'slap_pitch_handler',
-            abjad.OrderedDict(
+            dict(
                 [
                     ('pitch_count', 19),
                     ('chord_boolean_count', -1),
@@ -23,7 +23,7 @@ handler_to_value = abjad.OrderedDict(
             ),
         (
             'Warble Fingerings',
-            abjad.OrderedDict(
+            dict(
                 [
                     ('state', 'No State Preservation Enabled!'),
                     ]
@@ -31,7 +31,7 @@ handler_to_value = abjad.OrderedDict(
             ),
         (
             'snap pizz',
-            abjad.OrderedDict(
+            dict(
                 [
                     ('count', 16),
                     ('vector_count', 16),
@@ -40,7 +40,7 @@ handler_to_value = abjad.OrderedDict(
             ),
         (
             'warble dynamics',
-            abjad.OrderedDict(
+            dict(
                 [
                     ('count_1', 21),
                     ('count_2', 10),
@@ -52,7 +52,7 @@ handler_to_value = abjad.OrderedDict(
             ),
         (
             'slap dynamics',
-            abjad.OrderedDict(
+            dict(
                 [
                     ('count_1', 11),
                     ('count_2', -1),

@@ -1,9 +1,9 @@
 import abjad
-handler_to_value = abjad.OrderedDict(
+handler_to_value = dict(
     [
         (
             'final warble',
-            abjad.OrderedDict(
+            dict(
                 [
                     ('pitch_count', 94),
                     ('chord_boolean_count', -1),
@@ -13,7 +13,7 @@ handler_to_value = abjad.OrderedDict(
             ),
         (
             'wailing',
-            abjad.OrderedDict(
+            dict(
                 [
                     ('pitch_count', 3),
                     ('chord_boolean_count', -1),

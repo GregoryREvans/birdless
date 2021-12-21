@@ -4,7 +4,7 @@ from abjadext import rmakers
 
 silence_maker = rmakers.stack(
     rmakers.NoteRhythmMaker(),
-    rmakers.force_rest(abjad.select().leaves(pitched=True)),
+    rmakers.force_rest(lambda _: abjad.Selection(_).leaves(pitched=True)),
 )
 
 silence_handler = evans.RhythmHandler(
@@ -39,10 +39,10 @@ slap_rhythm_maker = rmakers.stack(
             "(1 (-1 (1 (1 1)) -2 (1 (-1 1))))",
         ]
     ),
-    rmakers.trivialize(abjad.select().tuplets()),
-    rmakers.extract_trivial(abjad.select().tuplets()),
-    rmakers.rewrite_rest_filled(abjad.select().tuplets()),
-    rmakers.rewrite_sustained(abjad.select().tuplets()),
+    rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+    rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+    rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+    rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
 )
 
 slap_rhythm_handler = evans.RhythmHandler(
@@ -58,10 +58,10 @@ mult_rhythm_maker = rmakers.stack(
     rmakers.talea(
         [3, 2, 6, 5, 2, 3, 4], 8, extra_counts=[0, -1, 2, 0, -3, 0, 0, 4, 3, 0, 2, 1]
     ),
-    rmakers.trivialize(abjad.select().tuplets()),
-    rmakers.extract_trivial(abjad.select().tuplets()),
-    rmakers.rewrite_rest_filled(abjad.select().tuplets()),
-    rmakers.rewrite_sustained(abjad.select().tuplets()),
+    rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+    rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+    rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+    rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
 )
 
 mult_rhythm_handler = evans.RhythmHandler(
@@ -92,10 +92,10 @@ final_warble = evans.Sequence(warble_rotations_and_funnels).reverse()
 
 warble_rhythm_maker = rmakers.stack(
     evans.RTMMaker(final_warble),
-    rmakers.trivialize(abjad.select().tuplets()),
-    rmakers.extract_trivial(abjad.select().tuplets()),
-    rmakers.rewrite_rest_filled(abjad.select().tuplets()),
-    rmakers.rewrite_sustained(abjad.select().tuplets()),
+    rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+    rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+    rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+    rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
 )
 
 warble_rhythm_handler = evans.RhythmHandler(
@@ -110,10 +110,10 @@ flourish_rhythm_maker = rmakers.stack(
             "(1 ((1 (1 2 1 1 1 1 1 1 1)) 2))",
         ]
     ),
-    rmakers.trivialize(abjad.select().tuplets()),
-    rmakers.extract_trivial(abjad.select().tuplets()),
-    rmakers.rewrite_rest_filled(abjad.select().tuplets()),
-    rmakers.rewrite_sustained(abjad.select().tuplets()),
+    rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+    rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+    rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+    rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
 )
 
 flourish_rhythm_handler = evans.RhythmHandler(
@@ -124,10 +124,10 @@ flourish_rhythm_handler = evans.RhythmHandler(
 
 sub_tone_rhythm_maker = rmakers.stack(
     rmakers.talea([2, 3, 2, 4, 5, 7, 6], 8, extra_counts=[0, 1, -1]),
-    rmakers.trivialize(abjad.select().tuplets()),
-    rmakers.extract_trivial(abjad.select().tuplets()),
-    rmakers.rewrite_rest_filled(abjad.select().tuplets()),
-    rmakers.rewrite_sustained(abjad.select().tuplets()),
+    rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+    rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+    rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+    rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
 )
 
 sub_tone_rhythm_handler = evans.RhythmHandler(
@@ -145,10 +145,10 @@ final_warble = evans.RhythmHandler(
             end_counts=[4],
             extra_counts=[0, 1, 2, 3, 2, 1],
         ),
-        rmakers.trivialize(abjad.select().tuplets()),
-        rmakers.extract_trivial(abjad.select().tuplets()),
-        rmakers.rewrite_rest_filled(abjad.select().tuplets()),
-        rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
     ),
     forget=False,
 )

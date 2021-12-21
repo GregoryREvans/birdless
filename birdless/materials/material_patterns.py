@@ -69,7 +69,7 @@ rhythm_materials_03 = [
 ]
 
 teeth_pitch_handler_03 = teeth_pitch_handler.make_persistent_copy(
-    abjad.OrderedDict(
+    dict(
         [
             ("pitch_count", 2),
             ("chord_boolean_count", -1),
@@ -92,7 +92,7 @@ pitch_materials_03 = [
 ## 04
 
 mult_rhythm_handler_04 = mult_rhythm_handler.make_persistent_copy(
-    abjad.OrderedDict(
+    dict(
         [
             ("divisions_consumed", 2),
             ("logical_ties_produced", 4),
@@ -117,7 +117,7 @@ rhythm_materials_04 = [
 ]
 
 mult_pitch_handler_04 = mult_pitch_handler.make_persistent_copy(
-    abjad.OrderedDict(
+    dict(
         [
             ("pitch_count", 3),
             ("chord_boolean_count", -1),
@@ -248,7 +248,7 @@ articulation_materials_04 = [
 ]
 
 mult_rhythm_handler_05 = mult_rhythm_handler.make_persistent_copy(
-    abjad.OrderedDict(
+    dict(
         [
             ("divisions_consumed", 7),
             ("incomplete_last_note", True),
@@ -263,7 +263,7 @@ rhythm_materials_05 = [
 ]
 
 mult_pitch_handler_05 = mult_pitch_handler.make_persistent_copy(
-    abjad.OrderedDict(
+    dict(
         [
             ("pitch_count", 11),
             ("chord_boolean_count", -1),
@@ -290,7 +290,7 @@ rhythm_materials_06 = [
 ]
 
 teeth_pitch_handler_06 = teeth_pitch_handler.make_persistent_copy(
-    abjad.OrderedDict(
+    dict(
         [
             ("pitch_count", 3),
             ("chord_boolean_count", -1),
@@ -300,7 +300,7 @@ teeth_pitch_handler_06 = teeth_pitch_handler.make_persistent_copy(
 )
 
 warble_pitch_handler_06 = warble_pitch_handler.make_persistent_copy(
-    abjad.OrderedDict(
+    dict(
         [
             ("pitch_count", 11),
             ("chord_boolean_count", -1),
@@ -401,7 +401,7 @@ articulation_materials_06 = [
 ## 07
 
 mult_rhythm_handler_07 = mult_rhythm_handler.make_persistent_copy(
-    abjad.OrderedDict(
+    dict(
         [
             ("divisions_consumed", 13),
             ("incomplete_last_note", True),
@@ -425,7 +425,7 @@ rhythm_materials_07 = [
 ]
 
 mult_pitch_handler_07 = mult_pitch_handler.make_persistent_copy(
-    abjad.OrderedDict(
+    dict(
         [
             ("pitch_count", 25),
             ("chord_boolean_count", -1),
@@ -435,7 +435,7 @@ mult_pitch_handler_07 = mult_pitch_handler.make_persistent_copy(
 )
 
 teeth_pitch_handler_07 = teeth_pitch_handler.make_persistent_copy(
-    abjad.OrderedDict(
+    dict(
         [
             ("pitch_count", 6),
             ("chord_boolean_count", -1),
@@ -481,7 +481,7 @@ rhythm_materials_08 = [
 ]
 
 slap_pitch_handler_08 = slap_pitch_handler.make_persistent_copy(
-    abjad.OrderedDict(
+    dict(
         [
             ("pitch_count", 2),
             ("chord_boolean_count", -1),
@@ -491,7 +491,7 @@ slap_pitch_handler_08 = slap_pitch_handler.make_persistent_copy(
 )
 
 warble_pitch_handler_08 = warble_pitch_handler.make_persistent_copy(
-    abjad.OrderedDict(
+    dict(
         [
             ("pitch_count", 11),
             ("chord_boolean_count", -1),
@@ -708,7 +708,7 @@ rhythm_materials_09 = [
 ]
 
 slap_pitch_handler_09 = slap_pitch_handler.make_persistent_copy(
-    abjad.OrderedDict(
+    dict(
         [
             ("pitch_count", 19),
             ("chord_boolean_count", -1),
@@ -743,7 +743,7 @@ rhythm_materials_10 = [
 ]
 
 flourish_pitch_handler_10 = flourish_pitch_handler.make_persistent_copy(
-    abjad.OrderedDict(
+    dict(
         [
             ("pitch_count", 9),
             ("chord_boolean_count", -1),
@@ -753,7 +753,7 @@ flourish_pitch_handler_10 = flourish_pitch_handler.make_persistent_copy(
 )
 
 teeth_pitch_handler_10 = teeth_pitch_handler.make_persistent_copy(
-    abjad.OrderedDict(
+    dict(
         [
             ("pitch_count", 42),
             ("chord_boolean_count", -1),
@@ -791,7 +791,7 @@ rhythm_materials_11 = [
 ]
 
 slap_pitch_handler_11 = slap_pitch_handler.make_persistent_copy(
-    abjad.OrderedDict(
+    dict(
         [
             ("pitch_count", 36),
             ("chord_boolean_count", -1),
@@ -801,7 +801,7 @@ slap_pitch_handler_11 = slap_pitch_handler.make_persistent_copy(
 )
 
 teeth_pitch_handler_11 = teeth_pitch_handler.make_persistent_copy(
-    abjad.OrderedDict(
+    dict(
         [
             ("pitch_count", 48),
             ("chord_boolean_count", -1),

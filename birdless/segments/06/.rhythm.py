@@ -1,9 +1,9 @@
 import abjad
-handler_to_value = abjad.OrderedDict(
+handler_to_value = dict(
     [
         (
             'warble_rhythm_handler',
-            abjad.OrderedDict(
+            dict(
                 [
                     ('state', 4),
                     ]
@@ -11,11 +11,11 @@ handler_to_value = abjad.OrderedDict(
             ),
         (
             'note_rhythm_handler',
-            abjad.OrderedDict(
+            dict(
                 [
                     (
                         'state',
-                        abjad.OrderedDict(
+                        dict(
                             [
                                 ('divisions_consumed', 2),
                                 ('logical_ties_produced', 2),
